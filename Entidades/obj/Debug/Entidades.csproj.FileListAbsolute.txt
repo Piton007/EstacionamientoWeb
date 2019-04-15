@@ -1,0 +1,2 @@
+C:\Users\andre\Documents\Visual Studio 2017\Proyectos\EstacionamientoTF\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\andre\Documents\Visual Studio 2017\Proyectos\EstacionamientoTF\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
