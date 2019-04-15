@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="ICajeroServicio.cs" />
     <Compile Include="IComprobanteServicio.cs" />
-    <Compile Include="IDAOServicio.cs" />
+    <Compile Include="ICRUDServicio.cs" />
     <Compile Include="IEspacioServicio.cs" />
     <Compile Include="IEstacionamientoServicio.cs" />
     <Compile Include="IIngresoServicio.cs" />

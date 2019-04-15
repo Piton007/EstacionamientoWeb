@@ -1,2 +1,8 @@
 C:\Users\andre\Documents\Visual Studio 2017\Proyectos\EstacionamientoTF\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
 C:\Users\andre\Documents\Visual Studio 2017\Proyectos\EstacionamientoTF\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+D:\EstacionamientoTF\Entidades\bin\Debug\Entidades.dll
+D:\EstacionamientoTF\Entidades\bin\Debug\Entidades.pdb
+D:\EstacionamientoTF\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+D:\EstacionamientoTF\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+D:\EstacionamientoTF\Entidades\obj\Debug\Entidades.dll
+D:\EstacionamientoTF\Entidades\obj\Debug\Entidades.pdb

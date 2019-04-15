@@ -1,0 +1,11 @@
+D:\EstacionamientoTF\Negocios\obj\Debug\Negocios.csprojAssemblyReference.cache
+D:\EstacionamientoTF\Negocios\obj\Debug\Negocios.csproj.CoreCompileInputs.cache
+D:\EstacionamientoTF\Negocios\bin\Debug\Negocios.dll
+D:\EstacionamientoTF\Negocios\bin\Debug\Negocios.pdb
+D:\EstacionamientoTF\Negocios\bin\Debug\Data.dll
+D:\EstacionamientoTF\Negocios\bin\Debug\Entidades.dll
+D:\EstacionamientoTF\Negocios\bin\Debug\Data.pdb
+D:\EstacionamientoTF\Negocios\bin\Debug\Entidades.pdb
+D:\EstacionamientoTF\Negocios\obj\Debug\Negocios.csproj.CopyComplete
+D:\EstacionamientoTF\Negocios\obj\Debug\Negocios.dll
+D:\EstacionamientoTF\Negocios\obj\Debug\Negocios.pdb

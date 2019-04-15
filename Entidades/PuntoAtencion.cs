@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class PuntoAtencion
+    public class PuntoAtencion
     {
         public int Id { get; set; }
         public string Ubicacion { get; set; }
