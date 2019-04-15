@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Entidades;
 namespace Data
 {
-    interface ICajeroRepository
+    interface ICajeroRepository: ICRUDRepository<Cajero>
     {
+
     }
 }

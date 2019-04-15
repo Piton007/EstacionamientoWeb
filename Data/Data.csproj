@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="ICajeroRepository.cs" />
     <Compile Include="IComprobanteRepository.cs" />
-    <Compile Include="IDAORepository.cs" />
+    <Compile Include="ICRUDRepository.cs" />
     <Compile Include="IEspacioRepository.cs" />
     <Compile Include="IEstacionamientoRepository.cs" />
     <Compile Include="IIngresoRepository.cs" />
