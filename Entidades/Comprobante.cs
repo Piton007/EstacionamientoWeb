@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class Comprobante
+    public class Comprobante
     {
         public int Id { get; set; }
         public DateTime FechaInicio { get; set; }
