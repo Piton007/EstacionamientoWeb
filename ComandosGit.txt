@@ -72,5 +72,14 @@ git tag -a v<numeroversion> -m <mensaje> <codigocommit>
 git push origin v<numeroversion>
 /*Sincronizar todos los tags locales en el github*/
 git push origin --tags
-
+/*Para que permanezca mis cambios en el manual merge*/
+git checkout --ours <nombrefile>
+/*Para que permanezca los cambios del repositorio en el manual merge*/
+git checkout --theirs <nombrefile>
+/*Para que permanezca todos mis cambios en el manual merge*/
+grep -lr '<<<<<<<' . | xargs git checkout --ours
+/*Para que permanezca todos los cambios del repositorio en el manual merge*/
+grep -lr '<<<<<<<' . | xargs git checkout --theirs
+/*Crear .gitignore*/
+touch .gitignore
 

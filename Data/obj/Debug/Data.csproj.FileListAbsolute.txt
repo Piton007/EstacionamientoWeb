@@ -7,3 +7,12 @@ D:\EstacionamientoTF\Data\bin\Debug\Entidades.pdb
 D:\EstacionamientoTF\Data\obj\Debug\Data.csproj.CopyComplete
 D:\EstacionamientoTF\Data\obj\Debug\Data.dll
 D:\EstacionamientoTF\Data\obj\Debug\Data.pdb
+C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Data\bin\Debug\Data.dll
+C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Data\bin\Debug\Data.pdb
+C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Data\bin\Debug\Entidades.dll
+C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Data\bin\Debug\Entidades.pdb
+C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Data\obj\Debug\Data.csprojAssemblyReference.cache
+C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Data\obj\Debug\Data.csproj.CopyComplete
+C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Data\obj\Debug\Data.dll
+C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Data\obj\Debug\Data.pdb
