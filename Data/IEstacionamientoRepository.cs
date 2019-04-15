@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Entidades;
 namespace Data
 {
-    interface IEstacionamientoRepository: ICRUDRepository<Estacionamiento>
+    public interface IEstacionamientoRepository: ICRUDRepository<Estacionamiento>
     {
     }
 }

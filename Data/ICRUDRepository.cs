@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    interface ICRUDRepository<T>
+    public interface ICRUDRepository<T>
     {
         bool Insert(T t);
         bool Update(T t);

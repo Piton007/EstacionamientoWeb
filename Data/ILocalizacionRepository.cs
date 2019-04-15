@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Entidades;
 namespace Data
 {
-    interface ILocalizacionRepository: ICRUDRepository<Localizacion>
+    public interface ILocalizacionRepository: ICRUDRepository<Localizacion>
     {
 
     }
