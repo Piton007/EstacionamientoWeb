@@ -1,0 +1,76 @@
+<>=Significa que solo se debe colocar lo de adentro.
+FastForward=Fusion simple
+Manual Merge= Cuando se trabaja en equipo. Dos cambios en la misma linea de codigo, 
+por ello debemos elegir manualmente el cambio final
+Tag= commit donde esta una version del proyecto
+/*Cambiar Nombre de usuario*/
+git config --global user.name "nombre"
+/*Ver Nombre de usuario*/
+git config --global user.name
+/*Cambiar email de usuario*/
+git config --global user.email "email"
+/*Visualizar email de usuario*/
+git config --global user.email
+/*Activar los colores para las notificaciones de GIT*/
+git config --global color.ui <true>
+/*Ver las configuraciones de configuraciones de usuario*/
+git config --global --list
+/*Marcar el punto de inicio para GIT */
+git init
+/*Agregar los cambios recientes al branch*/
+git add -A
+/*Agregar un commit o un nodo(punto de bacup)*/
+git commit -m <nombrecommit>
+/* Cambiar el mensaje del commit*/
+git commit --amend -m <nuevonombrecommit>
+/*Visualizar los cambios recientes*/
+git status
+/*Visualizar los commits*/
+git log
+/*Moverse entre commits*/
+git checkout <codigodelcomit>
+/*Moverse entre branchs*/
+get checkout <nombrebranch>
+/*Generar .txt de los commits*/
+git log >  <commits.txt>
+/*Eliminar todos los commits que esten despues del commit elegido (No hace cambios en el working area)*/
+git reset --soft <codigocommit>
+/*Eliminar todos los commits que esten despues del commit elegido (Si hace cambios en el working area)*/
+git reset --hard <codigocommit>
+/*Añadir un branch(el commit inicial del nuevo branch sera el ultimo del branch, en ese momento, donde ejecutas el siguiente comando)*/
+git branch <nombrebranch>
+git checkout -b <nombrebranch>
+/*Eliminar un branch*/
+git branch -d <nombrebranch>
+/*Fusionar dos branch ( la rama que va a absorber es donde vas a ejecutar el comando)[FastForward]*/
+git merge <branchabsorbida>
+/*Descarga el proyecto de GITHUB*/
+git clone <urldelrepositorio>
+/*Vincula el proyecto de github con el proyecto local*/
+git  remote add origin <urldelrepositorio>
+/*Desvincula el proyecto de github con el proyecto local*/
+git  remote remove origin
+/* Visualiza el proyecto vinculado */
+git remote -v
+/*Sube los archivos del working area al github por primera vez*/
+git push -u origin master
+/* Actualiza los cambios de esa rama a github*/
+git push origin <nombrerama>
+[Si no hay commit nuevos]
+git push origin <nombrerama> -f
+[Solo en caso de trabajar en grupo]
+/* Descargar los cambios a tu local working area*/
+git fetch origin (crea una rama ficticia identica al branch de github)
+git merge origin/master (se fusiona con esa rama ficticia)
+[Si  aparece error unrelated-histories]
+git merge origin/master --allow-unrelated-histories
+/* Agregar un tag local(se le asigna el tag al ultimo commit)  */
+git tag -a v<numeroversion> -m <mensaje>
+/* Agregar un tag local(se especifica el commit)*/
+git tag -a v<numeroversion> -m <mensaje> <codigocommit>
+/* Sincronizar el tag local en el github */
+git push origin v<numeroversion>
+/*Sincronizar todos los tags locales en el github*/
+git push origin --tags
+
+
