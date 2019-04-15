@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Entidades;
 namespace Data
 {
-    interface ICajeroRepository: ICRUDRepository<Cajero>
+    public interface ICajeroRepository: ICRUDRepository<Cajero>
     {
 
     }

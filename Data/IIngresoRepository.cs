@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Entidades;
 namespace Data
 {
-    interface IIngresoRepository: ICRUDRepository<Ingreso>
+    public interface IIngresoRepository: ICRUDRepository<Ingreso>
     {
 
     }

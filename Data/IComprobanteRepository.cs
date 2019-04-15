@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Entidades;
 namespace Data
 {
-    interface IComprobanteRepository: ICRUDRepository<Comprobante>
+    public interface IComprobanteRepository: ICRUDRepository<Comprobante>
     {
     }
 }

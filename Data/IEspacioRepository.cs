@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Entidades;
 namespace Data
 {
-    interface IEspacioRepository: ICRUDRepository<Espacio>
+    public interface IEspacioRepository: ICRUDRepository<Espacio>
     {
     }
 }

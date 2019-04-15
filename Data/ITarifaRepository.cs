@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Entidades;
 namespace Data
 {
-    interface ITarifaRepository: ICRUDRepository<Tarifa>
+    public interface ITarifaRepository: ICRUDRepository<Tarifa>
     {
 
     }

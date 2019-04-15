@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Negocios
 {
-    interface IComprobanteServicio
+    public interface IComprobanteServicio
     {
     }
 }
