@@ -10,10 +10,10 @@ namespace Entidades
 {
     public class Localizacion
     {
-        [DisplayName(" Nombre Local")]
+        [DisplayName(" ID Local")]
         public int CodLocalizacion { get; set; }
         
-        [DisplayName("Nombre")]
+        [DisplayName("Nombre Local")]
         public string Nombre { get; set; }
     }
 }

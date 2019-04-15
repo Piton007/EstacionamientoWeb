@@ -16,10 +16,10 @@ namespace Entidades
         [StringLength(50, MinimumLength = 2, ErrorMessage = "El nombre no se debe superar los 50 caracteres")]
         public string Nombre { get; set; }
         [Required(ErrorMessage = " Ingrese numero de espacios")]
-        [DisplayName("Espacios")]
+        [DisplayName(" Nro Espacios")]
         [Range(1, 50, ErrorMessage = "Solo puede alberga un maximo de 50 espacios")]
         public int espacios { get; set; }
-        [DisplayName(" Nombre ")]
+        [DisplayName(" Direccion ")]
         [StringLength(50, MinimumLength = 2, ErrorMessage = "La direccion no se debe superar los 50 caracteres")]
         public string Direccion { get; set; }
         [Required(ErrorMessage = "Please select a Local")]

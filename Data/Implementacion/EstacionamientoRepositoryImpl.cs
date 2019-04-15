@@ -22,7 +22,7 @@ namespace Data.Implementacion
                 using (var connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
                 {
                     connection.Open();
-                    var query = new SqlCommand("Delete * from Estacionamiento Where id_estacionamiento='"+id+"'", connection);
+                    var query = new SqlCommand("Delete  from Estacionamiento Where id_estacionamiento='" + id + "'", connection);
                     query.ExecuteNonQuery();
                     rpta = true;
                 }
@@ -43,19 +43,22 @@ namespace Data.Implementacion
                 using (var connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
                 {
                     connection.Open();
-                    var query = new SqlCommand("Select * from Estacionamiento ", connection);
+                    var query = new SqlCommand("Select E.id_estacionamiento, E.Nombre_Estacionamiento, E.nro_espacios, E.Direccion, E.cod_local, L.nombre from Estacionamiento as E inner join Localizacion as L on L.cod_local=E.cod_local ", connection);
                     using (var dr = query.ExecuteReader())
                     {
+                        var estacionamiento = new Estacionamiento();
+                        var Localizacion = new Localizacion();
                         while (dr.Read())
                         {
-                            var estacionamiento = new Estacionamiento();
-                            var Localizacion = new Localizacion();
+
                             estacionamiento.Id = Convert.ToInt32(dr["id_estacionamiento"]);
                             estacionamiento.Nombre = dr["Nombre_Estacionamiento"].ToString();
-                            estacionamiento.espacios=Convert.ToInt32(dr["nro_Espacios"]);
+                            estacionamiento.espacios = Convert.ToInt32(dr["nro_Espacios"]);
                             estacionamiento.Direccion = dr["Direccion"].ToString();
+                            Localizacion.Nombre = dr["nombre"].ToString();
                             Localizacion.CodLocalizacion = Convert.ToInt32(dr["cod_local"]);
                             estacionamiento.localizacion = Localizacion;
+
                             estacionamientos.Add(estacionamiento);
                         }
 
@@ -80,7 +83,8 @@ namespace Data.Implementacion
                 {
                     con.Open();
 
-                    var query = new SqlCommand("SELECT * FROM  Estacionamiento WHERE id_estacionamiento='" + id + "'", con);
+                    var query = new SqlCommand("SELECT E.id_estacionamiento, E.Nombre_Estacionamiento, E.nro_espacios, E.Direccion, E.cod_local, L.nombre  from Estacionamiento as E inner join Localizacion as L on L.cod_local=E.cod_local " +
+                        "WHERE id_estacionamiento='" + id + "'", con);
                     using (var dr = query.ExecuteReader())
                     {
                         while (dr.Read())
@@ -91,10 +95,10 @@ namespace Data.Implementacion
                             estacionamiento.Nombre = dr["Nombre_Estacionamiento"].ToString();
                             estacionamiento.espacios = Convert.ToInt32(dr["nro_Espacios"]);
                             estacionamiento.Direccion = dr["Direccion"].ToString();
-
+                            localizacion.Nombre = dr["nombre"].ToString();
                             localizacion.CodLocalizacion = Convert.ToInt32(dr["cod_local"]);
                             estacionamiento.localizacion = localizacion;
-                            
+
 
 
 
@@ -131,7 +135,7 @@ namespace Data.Implementacion
 
 
             }
-            catch ( Exception e)
+            catch (Exception e)
             {
                 throw;
             }
@@ -147,9 +151,9 @@ namespace Data.Implementacion
                 {
                     connection.Open();
                     var query = new SqlCommand("Update Estacionamiento Set cod_local ='" + t.localizacion.CodLocalizacion
-                                             +"'"+ ", Nombre_Estacionamiento='" + t.Nombre
+                                             + "'" + ", Nombre_Estacionamiento='" + t.Nombre
                                              + "'" + ", nro_Espacios='" + t.espacios
-                                             + "'"+ ", Direccion='" + t.Direccion+ "'"+ " Where id_estacionamiento='"+t.Id+"'", connection);
+                                             + "'" + ", Direccion='" + t.Direccion + "'" + " Where id_estacionamiento='" + t.Id + "'", connection);
                     query.ExecuteNonQuery();
                     rpta = true;
                 }
