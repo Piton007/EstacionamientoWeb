@@ -6,3 +6,9 @@ D:\EstacionamientoTF\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
 D:\EstacionamientoTF\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 D:\EstacionamientoTF\Entidades\obj\Debug\Entidades.dll
 D:\EstacionamientoTF\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Entidades\bin\Debug\Entidades.dll
+C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Entidades\obj\Debug\Entidades.dll
+C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Entidades\obj\Debug\Entidades.pdb

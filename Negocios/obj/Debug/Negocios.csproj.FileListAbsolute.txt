@@ -9,3 +9,14 @@ D:\EstacionamientoTF\Negocios\bin\Debug\Entidades.pdb
 D:\EstacionamientoTF\Negocios\obj\Debug\Negocios.csproj.CopyComplete
 D:\EstacionamientoTF\Negocios\obj\Debug\Negocios.dll
 D:\EstacionamientoTF\Negocios\obj\Debug\Negocios.pdb
+C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Negocios\bin\Debug\Negocios.dll
+C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Negocios\bin\Debug\Negocios.pdb
+C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Negocios\bin\Debug\Data.dll
+C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Negocios\bin\Debug\Entidades.dll
+C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Negocios\bin\Debug\Data.pdb
+C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Negocios\bin\Debug\Entidades.pdb
+C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Negocios\obj\Debug\Negocios.csprojAssemblyReference.cache
+C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Negocios\obj\Debug\Negocios.csproj.CoreCompileInputs.cache
+C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Negocios\obj\Debug\Negocios.csproj.CopyComplete
+C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Negocios\obj\Debug\Negocios.dll
+C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Negocios\obj\Debug\Negocios.pdb

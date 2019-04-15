@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Negocios
 {
-    interface ICajeroServicio
+    public interface ICajeroServicio
     {
     }
 }

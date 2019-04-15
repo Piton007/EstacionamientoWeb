@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Entidades;
 namespace Data
 {
-    interface IPuntoAtencionRepository: ICRUDRepository<PuntoAtencion>
+    public interface IPuntoAtencionRepository: ICRUDRepository<PuntoAtencion>
     {
 
     }
