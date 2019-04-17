@@ -12,7 +12,7 @@ namespace Data.Implementacion
 {
     public class EstacionamientoRepositoryImpl : IEstacionamientoRepository
     {
-        public object ConfigurationManager { get; private set; }
+       
 
         public bool Delete(int id)
         {
@@ -135,7 +135,7 @@ namespace Data.Implementacion
 
 
             }
-            catch (Exception e)
+            catch (Exception )
             {
                 throw;
             }

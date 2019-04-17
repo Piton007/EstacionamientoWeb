@@ -21,7 +21,7 @@ git init
 git add -A
 /*Agregar un commit o un nodo(punto de bacup)*/
 git commit -m <nombrecommit>
-/* Cambiar el mensaje del commit*/
+/* Cambiar el mensaje del ultimo commit*/
 git commit --amend -m <nuevonombrecommit>
 /*Visualizar los cambios recientes*/
 git status
@@ -82,4 +82,6 @@ grep -lr '<<<<<<<' . | xargs git checkout --ours
 grep -lr '<<<<<<<' . | xargs git checkout --theirs
 /*Crear .gitignore*/
 touch .gitignore
+*/Clonar un branch especifico*/
+git clone --single-branch --branch <branchname> <url>
 

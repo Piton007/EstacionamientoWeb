@@ -1,0 +1,51 @@
+﻿@model Entidades.Comprobante
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Comprobante</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cod_ingreso.CodIngreso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model=>model.cod_ingreso.CodIngreso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model =>model.cod_ingreso.FechaIngreso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cod_ingreso.FechaIngreso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaFinal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaFinal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Monto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Monto)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
