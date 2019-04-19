@@ -1,5 +1,5 @@
 <>=Significa que solo se debe colocar lo de adentro.
-FastForward=Fusion simple
+FastForward=Fusion simple holahola xd
 Manual Merge= Cuando se trabaja en equipo. Dos cambios en la misma linea de codigo, 
 por ello debemos elegir manualmente el cambio final
 Tag= commit donde esta una version del proyecto
@@ -37,7 +37,7 @@ git log >  <commits.txt>
 git reset --soft <codigocommit>
 /*Eliminar todos los commits que esten despues del commit elegido (Si hace cambios en el working area)*/
 git reset --hard <codigocommit>
-/*Añadir un branch(el commit inicial del nuevo branch sera el ultimo del branch, en ese momento, donde ejecutas el siguiente comando)*/
+/*AÃ±adir un branch(el commit inicial del nuevo branch sera el ultimo del branch, en ese momento, donde ejecutas el siguiente comando)*/
 git branch <nombrebranch>
 git checkout -b <nombrebranch>
 /*Eliminar un branch*/
