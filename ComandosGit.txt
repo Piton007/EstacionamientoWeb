@@ -1,10 +1,10 @@
 <>=Significa que solo se debe colocar lo de adentro.
-FastForward=Fusion simple
+FastForward=Fusion simple asdasdasd
 Manual Merge= Cuando se trabaja en equipo. Dos cambios en la misma linea de codigo, 
 por ello debemos elegir manualmente el cambio final
 Tag= commit donde esta una version del proyecto
 /*Cambiar Nombre de usuario*/
-git config --global user.name "nombre"
+git config --global user.name "jkoselsdd"
 /*Ver Nombre de usuario*/
 git config --global user.name
 /*Cambiar email de usuario*/
