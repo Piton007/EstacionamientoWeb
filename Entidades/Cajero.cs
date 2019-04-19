@@ -11,8 +11,6 @@ namespace Entidades
         public int Id { get; set; }
         public string Nombre { get; set; }
         public string Turno { get; set; }
-
-        
-
+        public PuntoAtencion PuntoA { get; set; }
     }
 }

@@ -16,3 +16,12 @@ C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Data\obj\Debug\Data.cs
 C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Data\obj\Debug\Data.csproj.CopyComplete
 C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Data\obj\Debug\Data.dll
 C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Data\obj\Debug\Data.pdb
+C:\Users\andre\Desktop\TF Web\EstacionamientoWeb\Data\bin\Debug\Data.dll
+C:\Users\andre\Desktop\TF Web\EstacionamientoWeb\Data\bin\Debug\Data.pdb
+C:\Users\andre\Desktop\TF Web\EstacionamientoWeb\Data\bin\Debug\Entidades.dll
+C:\Users\andre\Desktop\TF Web\EstacionamientoWeb\Data\bin\Debug\Entidades.pdb
+C:\Users\andre\Desktop\TF Web\EstacionamientoWeb\Data\obj\Debug\Data.csprojAssemblyReference.cache
+C:\Users\andre\Desktop\TF Web\EstacionamientoWeb\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+C:\Users\andre\Desktop\TF Web\EstacionamientoWeb\Data\obj\Debug\Data.csproj.CopyComplete
+C:\Users\andre\Desktop\TF Web\EstacionamientoWeb\Data\obj\Debug\Data.dll
+C:\Users\andre\Desktop\TF Web\EstacionamientoWeb\Data\obj\Debug\Data.pdb

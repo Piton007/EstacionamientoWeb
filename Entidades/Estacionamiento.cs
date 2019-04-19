@@ -24,6 +24,6 @@ namespace Entidades
         public string Direccion { get; set; }
         [Required(ErrorMessage = "Please select a Local")]
         [DisplayName("Ingrese Nombre Local")]
-        public Localizacion  localizacion { get; set; }
+        public Localizacion localizacion { get; set; }
     }
 }

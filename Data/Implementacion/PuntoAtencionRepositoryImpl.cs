@@ -41,7 +41,8 @@ namespace Data.Implementacion
                 using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
                 {
                     conn.Open();
-                    var query = new SqlCommand("SELECT id_pAtencion, ubicacion FROM PuntoAtencion", conn);
+                    /*id_pAtencion, ubicacion*/
+                    var query = new SqlCommand("SELECT * FROM PuntoAtencion", conn);
                     using (var dr = query.ExecuteReader())
                     {
                         while (dr.Read())

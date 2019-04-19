@@ -11,3 +11,8 @@ C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Entidades\obj\Debug\En
 C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Entidades\obj\Debug\Entidades.dll
 C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Entidades\obj\Debug\Entidades.pdb
+C:\Users\andre\Desktop\TF Web\EstacionamientoWeb\Entidades\bin\Debug\Entidades.dll
+C:\Users\andre\Desktop\TF Web\EstacionamientoWeb\Entidades\bin\Debug\Entidades.pdb
+C:\Users\andre\Desktop\TF Web\EstacionamientoWeb\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\andre\Desktop\TF Web\EstacionamientoWeb\Entidades\obj\Debug\Entidades.dll
+C:\Users\andre\Desktop\TF Web\EstacionamientoWeb\Entidades\obj\Debug\Entidades.pdb

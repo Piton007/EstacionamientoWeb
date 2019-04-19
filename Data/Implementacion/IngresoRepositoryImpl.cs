@@ -41,22 +41,37 @@ namespace Data.Implementacion
                 using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
                 {
                     conn.Open();
-                    var query = new SqlCommand("SELECT cod_registro, id_Tarifa, id_Cajero, Placa, Fecha_reg, id_Espacio FROM Ingreso", conn);
+                    /*cod_registro, id_Tarifa, id_Cajero, Placa, Fecha_reg, id_Espacio*/
+                    var query = new SqlCommand("select * from Ingreso i inner join Tarifa t on i.id_Tarifa = t.id_Tarifa " +
+                        "inner join Espacio e on i.id_Espacio = e.id_Espacio " +
+                        "inner join Cajero c on i.id_Cajero = c.id_cajero", conn);
                     using (var dr = query.ExecuteReader())
                     {
                         while (dr.Read())
                         {
                             var ing = new Ingreso();
-                            ing.Tarifa = new Tarifa();
-                            ing.Cajero = new Cajero();
-                            ing.Espacio = new Espacio();
+                            var ta = new Tarifa();
+                            var ca = new Cajero();
+                            var esp = new Espacio();
 
                             ing.CodIngreso = Convert.ToInt32(dr["cod_registro"]);
-                            ing.Tarifa.Id = Convert.ToInt32(dr["id_Tarifa"]);
-                            ing.Cajero.Id = Convert.ToInt32(dr["id_Cajero"]);
                             ing.Placa = dr["Placa"].ToString();
-                            ing.FechaIngreso = Convert.ToDateTime(dr["Fecha_reg"]);
-                            ing.Espacio.Id = Convert.ToInt32(dr["id_Espacio"]);
+                            ing.FechaIngreso = DateTime.Now;
+
+                            ta.Id = Convert.ToInt32(dr["id_Tarifa"]);
+                            ta.MontoTarifa = Convert.ToDouble(dr["Tarifa"]);
+                            ta.TipoVehiculo = dr["Tipo_Veh"].ToString();
+
+                            ca.Id = Convert.ToInt32(dr["id_cajero"]);
+                            ca.Nombre = dr["Nombre"].ToString();
+                            ca.Turno = dr["Turno"].ToString();
+
+                            esp.Id = Convert.ToInt32(dr["id_Espacio"]);
+                            esp.Disponible = Convert.ToBoolean(dr["Disponibilidad"]);
+
+                            ing.Tarifa = ta;
+                            ing.Cajero = ca;
+                            ing.Espacio = esp;
                             ingresos.Add(ing);
                         }
                     }
@@ -78,7 +93,9 @@ namespace Data.Implementacion
                 using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
                 {
                     conn.Open();
-                    var query = new SqlCommand("SELECT cod_registro, id_Tarifa, id_Cajero, Placa, Fecha_reg, id_Espacio FROM Ingreso", conn);
+                    var query = new SqlCommand("select * from Ingreso i inner join Tarifa t on i.id_Tarifa = t.id_Tarifa " +
+                    "inner join Espacio e on i.id_Espacio = e.id_Espacio " +
+                    "inner join Cajero c on i.id_Cajero = c.id_cajero WHERE i.cod_registro=@id", conn);
                     using (var dr = query.ExecuteReader())
                     {
                         while (dr.Read())
@@ -89,11 +106,20 @@ namespace Data.Implementacion
                             ingreso.Espacio = new Espacio();
 
                             ingreso.CodIngreso = Convert.ToInt32(dr["cod_registro"]);
-                            ingreso.Tarifa.Id = Convert.ToInt32(dr["id_Tarifa"]);
-                            ingreso.Cajero.Id = Convert.ToInt32(dr["id_Cajero"]);
                             ingreso.Placa = dr["Placa"].ToString();
-                            ingreso.FechaIngreso = Convert.ToDateTime(dr["Fecha_reg"]);
+                            ingreso.FechaIngreso = DateTime.Now;
+
+                            ingreso.Tarifa.Id = Convert.ToInt32(dr["id_Tarifa"]);
+                            ingreso.Tarifa.MontoTarifa = Convert.ToDouble(dr["Tarifa"]);
+                            ingreso.Tarifa.TipoVehiculo = dr["Tipo_Veh"].ToString();
+
+                            ingreso.Cajero.Id = Convert.ToInt32(dr["id_cajero"]);
+                            ingreso.Cajero.Nombre = dr["Nombre"].ToString();
+                            ingreso.Cajero.Turno = dr["Turno"].ToString();
+
                             ingreso.Espacio.Id = Convert.ToInt32(dr["id_Espacio"]);
+                            ingreso.Espacio.Disponible = Convert.ToBoolean(dr["Disponibilidad"]);
+
                         }
                     }
                 }

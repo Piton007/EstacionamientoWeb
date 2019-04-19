@@ -135,6 +135,8 @@
     <Compile Include="Controllers\ComprobanteController.cs" />
     <Compile Include="Controllers\EstacionamientoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IngresoController.cs" />
+    <Compile Include="Controllers\PuntoAtencionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -186,6 +188,16 @@
     <Content Include="Views\Comprobante\Delete.cshtml" />
     <Content Include="Views\Comprobante\Edit.cshtml" />
     <Content Include="Views\Comprobante\Details.cshtml" />
+    <Content Include="Views\PuntoAtencion\Create.cshtml" />
+    <Content Include="Views\PuntoAtencion\Delete.cshtml" />
+    <Content Include="Views\PuntoAtencion\Edit.cshtml" />
+    <Content Include="Views\PuntoAtencion\Index.cshtml" />
+    <Content Include="Views\Ingreso\Create.cshtml" />
+    <Content Include="Views\Ingreso\Index.cshtml" />
+    <Content Include="Views\Ingreso\Edit.cshtml" />
+    <Content Include="Views\Ingreso\Delete.cshtml" />
+    <Content Include="Views\Ingreso\Details.cshtml" />
+    <Content Include="Views\PuntoAtencion\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
