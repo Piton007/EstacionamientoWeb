@@ -16,7 +16,7 @@ namespace Data.Implementacion
             bool seElimino = false;
             try
             {
-                using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
+                using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
                 {
                     conn.Open();
                     var query = new SqlCommand("DELETE FROM Ingreso WHERE cod_registro=@id");
@@ -38,7 +38,7 @@ namespace Data.Implementacion
             var ingresos = new List<Ingreso>();
             try
             {
-                using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
+                using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
                 {
                     conn.Open();
                     var query = new SqlCommand("SELECT cod_registro, id_Tarifa, id_Cajero, Placa, Fecha_reg, id_Espacio FROM Ingreso", conn);
@@ -75,7 +75,7 @@ namespace Data.Implementacion
             var ingreso = new Ingreso();
             try
             {
-                using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
+                using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
                 {
                     conn.Open();
                     var query = new SqlCommand("SELECT cod_registro, id_Tarifa, id_Cajero, Placa, Fecha_reg, id_Espacio FROM Ingreso", conn);
@@ -111,7 +111,7 @@ namespace Data.Implementacion
             bool seInserto = false;
             try
             {
-                using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
+                using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
                 {
                     conn.Open();
                     var query = new SqlCommand("INSERT INTO Ingreso(id_Tarifa, id_Cajero, Placa, Fecha_reg, id_Espacio) VALUES(@idTarifa,@idCajero,@Placa,@fecha,@idEspacio)", conn);
@@ -138,7 +138,7 @@ namespace Data.Implementacion
             bool seActualizo = false;
             try
             {
-                using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
+                using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
                 {
                     conn.Open();
                     var query = new SqlCommand("UPDATE Ingreso SET id_Tarifa=@idTarifa, id_Cajero=@idCajero, Placa=@Placa, Fecha_reg=@fecha, id_Espacio=@idEspacio WHERE cod_registro=@id", conn);

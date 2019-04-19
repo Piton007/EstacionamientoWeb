@@ -19,7 +19,7 @@ namespace Data.Implementacion
             bool rpta = false;
             try
             {
-                using (var connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
+                using (var connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
                 {
                     connection.Open();
                     var query = new SqlCommand("Delete  from Estacionamiento Where id_estacionamiento='" + id + "'", connection);
@@ -40,7 +40,7 @@ namespace Data.Implementacion
             var estacionamientos = new List<Estacionamiento>();
             try
             {
-                using (var connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
+                using (var connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
                 {
                     connection.Open();
                     var query = new SqlCommand("Select E.id_estacionamiento, E.Nombre_Estacionamiento, E.nro_espacios, E.Direccion, E.cod_local, L.nombre from Estacionamiento as E inner join Localizacion as L on L.cod_local=E.cod_local ", connection);
@@ -79,7 +79,7 @@ namespace Data.Implementacion
             Estacionamiento estacionamiento = null;
             try
             {
-                using (var con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
+                using (var con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
                 {
                     con.Open();
 
@@ -120,7 +120,7 @@ namespace Data.Implementacion
             try
             {
                 using (SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager
-                    .ConnectionStrings["Estacionamiento"].ToString()))
+                    .ConnectionStrings["EstacionamientoDB"].ToString()))
                 {
                     con.Open();
                     var query = new SqlCommand("INSERT INTO Estacionamiento VALUES( @cod_local,@Nombre,@nroEspacios,@Direccion)", con);
@@ -147,7 +147,7 @@ namespace Data.Implementacion
             bool rpta = false;
             try
             {
-                using (var connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
+                using (var connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
                 {
                     connection.Open();
                     var query = new SqlCommand("Update Estacionamiento Set cod_local ='" + t.localizacion.CodLocalizacion

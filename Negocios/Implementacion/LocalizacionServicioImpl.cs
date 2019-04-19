@@ -14,7 +14,7 @@ namespace Negocios.Implementacion
         private ILocalizacionRepository localizacionRepository = new LocalizacionRepositoryImpl();
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            return localizacionRepository.Delete(id);
         }
 
         public List<Localizacion> FindAll()
@@ -29,12 +29,12 @@ namespace Negocios.Implementacion
 
         public bool Insert(Localizacion t)
         {
-            throw new NotImplementedException();
+            return localizacionRepository.Insert(t);
         }
 
         public bool Update(Localizacion t)
         {
-            throw new NotImplementedException();
+            return localizacionRepository.Update(t);
         }
     }
 }

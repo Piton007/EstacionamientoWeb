@@ -16,7 +16,7 @@ namespace Data.Implementacion
             bool seElimino = false;
             try
             {
-                using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
+                using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
                 {
                     conn.Open();
                     var query = new SqlCommand("DELETE FROM PuntoAtencion WHERE id_pAtencion=@id");
@@ -38,7 +38,7 @@ namespace Data.Implementacion
             var puntoAtenciones = new List<PuntoAtencion>();
             try
             {
-                using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
+                using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
                 {
                     conn.Open();
                     var query = new SqlCommand("SELECT id_pAtencion, ubicacion FROM PuntoAtencion", conn);
@@ -67,7 +67,7 @@ namespace Data.Implementacion
             var pa = new PuntoAtencion();
             try
             {
-                using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
+                using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
                 {
                     conn.Open();
                     var query = new SqlCommand("SELECT id_pAtencion, ubicacion FROM PuntoAtencion WHERE id_pAtencion=@id", conn);
@@ -94,7 +94,7 @@ namespace Data.Implementacion
             bool seInserto = false;
             try
             {
-                using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
+                using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
                 {
                     conn.Open();
                     var query = new SqlCommand("INSERT INTO PuntoAtencion(ubicacion) VALUES(@ubicacion)", conn);
@@ -117,7 +117,7 @@ namespace Data.Implementacion
             bool seActualizo = false;
             try
             {
-                using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
+                using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
                 {
                     conn.Open();
                     var query = new SqlCommand("UPDATE PuntoAtencion SET ubicacion = @ubi WHERE id_pAtencion=@id", conn);

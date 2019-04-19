@@ -20,3 +20,12 @@ C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Negocios\obj\Debug\Neg
 C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Negocios\obj\Debug\Negocios.csproj.CopyComplete
 C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Negocios\obj\Debug\Negocios.dll
 C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Negocios\obj\Debug\Negocios.pdb
+C:\Users\0l0\Desktop\Aplicaciones WEB\GIT\Negocios\bin\Debug\Negocios.dll
+C:\Users\0l0\Desktop\Aplicaciones WEB\GIT\Negocios\bin\Debug\Negocios.pdb
+C:\Users\0l0\Desktop\Aplicaciones WEB\GIT\Negocios\bin\Debug\Data.dll
+C:\Users\0l0\Desktop\Aplicaciones WEB\GIT\Negocios\bin\Debug\Entidades.dll
+C:\Users\0l0\Desktop\Aplicaciones WEB\GIT\Negocios\bin\Debug\Data.pdb
+C:\Users\0l0\Desktop\Aplicaciones WEB\GIT\Negocios\bin\Debug\Entidades.pdb
+C:\Users\0l0\Desktop\Aplicaciones WEB\GIT\Negocios\obj\Debug\Negocios.csprojResolveAssemblyReference.cache
+C:\Users\0l0\Desktop\Aplicaciones WEB\GIT\Negocios\obj\Debug\Negocios.dll
+C:\Users\0l0\Desktop\Aplicaciones WEB\GIT\Negocios\obj\Debug\Negocios.pdb

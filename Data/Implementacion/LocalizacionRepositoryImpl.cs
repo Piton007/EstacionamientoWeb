@@ -13,7 +13,23 @@ namespace Data.Implementacion
     {
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            bool rpta = false;
+            try
+            {
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
+                {
+                    con.Open();
+                    var query = new SqlCommand("DELETE FROM Localizacion WHERE id_Tarifa='" + id + "'", con);
+
+                    query.ExecuteNonQuery();
+                    rpta = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return rpta;
         }
 
         public List<Localizacion> FindAll()
@@ -21,10 +37,10 @@ namespace Data.Implementacion
             var locales = new List<Localizacion>();
             try
             {
-                using (var connection=new SqlConnection(ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
+                using (var connection=new SqlConnection(ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
                 {
                     connection.Open();
-                    var query = new SqlCommand("Select * FROM Localizacion", connection);
+                    var query = new SqlCommand("Select l.cod_local, l.nombre FROM Localizacion l", connection);
                     using (var dr=query.ExecuteReader())
                     {
                         while (dr.Read())
@@ -49,24 +65,21 @@ namespace Data.Implementacion
 
         public Localizacion FindById(int? id)
         {
-            Localizacion localizacion = null;
+            Localizacion localizacion = new Localizacion();
             try
             {
-                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
                 {
                     con.Open();
 
-                    var query = new SqlCommand("SELECT * FROM  Localizacion WHERE cod_local='" + id + "'", con);
+                    var query = new SqlCommand("SELECT * FROM  Localizacion WHERE cod_local=@cod", con);
+                    query.Parameters.AddWithValue("@cod", id);
                     using (var dr = query.ExecuteReader())
                     {
                         while (dr.Read())
                         {
-                            localizacion = new Localizacion();
                             localizacion.CodLocalizacion = Convert.ToInt32(dr["cod_local"]);
                             localizacion.Nombre = dr["nombre"].ToString();
-
-
-
                         }
                     }
                 }
@@ -80,12 +93,47 @@ namespace Data.Implementacion
         }
             public bool Insert(Localizacion t)
         {
-            throw new NotImplementedException();
+            bool rpta = false;
+            try
+            {
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
+                {
+                    con.Open();
+                    var query = new SqlCommand("INSERT INTO Localizacion VALUES(@nombre)", con);
+                    query.Parameters.AddWithValue("@nombre", t.Nombre);
+
+                    query.ExecuteNonQuery();
+                    rpta = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return rpta;
         }
 
         public bool Update(Localizacion t)
         {
-            throw new NotImplementedException();
+            bool rpta = false;
+            try
+            {
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
+                {
+                    con.Open();
+                    var query = new SqlCommand("UPDATE Localizacion SET nombre=@nombre WHERE cod_local=@doc", con);
+                    query.Parameters.AddWithValue("@nombre", t.Nombre);
+                    query.Parameters.AddWithValue("@cod", t.CodLocalizacion);
+
+                    query.ExecuteNonQuery();
+                    rpta = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return rpta;
         }
     }
 }

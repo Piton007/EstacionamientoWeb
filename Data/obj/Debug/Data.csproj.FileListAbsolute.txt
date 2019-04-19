@@ -16,3 +16,10 @@ C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Data\obj\Debug\Data.cs
 C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Data\obj\Debug\Data.csproj.CopyComplete
 C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Data\obj\Debug\Data.dll
 C:\Users\Andre\Desktop\Estacionamiento\EstacionamientoWeb\Data\obj\Debug\Data.pdb
+C:\Users\0l0\Desktop\Aplicaciones WEB\GIT\Data\bin\Debug\Data.dll
+C:\Users\0l0\Desktop\Aplicaciones WEB\GIT\Data\bin\Debug\Data.pdb
+C:\Users\0l0\Desktop\Aplicaciones WEB\GIT\Data\bin\Debug\Entidades.dll
+C:\Users\0l0\Desktop\Aplicaciones WEB\GIT\Data\bin\Debug\Entidades.pdb
+C:\Users\0l0\Desktop\Aplicaciones WEB\GIT\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+C:\Users\0l0\Desktop\Aplicaciones WEB\GIT\Data\obj\Debug\Data.dll
+C:\Users\0l0\Desktop\Aplicaciones WEB\GIT\Data\obj\Debug\Data.pdb
