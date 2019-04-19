@@ -8,6 +8,6 @@ namespace Data
 {
     public interface IIngresoRepository: ICRUDRepository<Ingreso>
     {
-
+    /*Haciendo cambios en git*/
     }
 }
