@@ -31,3 +31,12 @@ C:\Users\andre\Desktop\TF Web\EstacionamientoWeb\Negocios\obj\Debug\Negocios.csp
 C:\Users\andre\Desktop\TF Web\EstacionamientoWeb\Negocios\obj\Debug\Negocios.csproj.CopyComplete
 C:\Users\andre\Desktop\TF Web\EstacionamientoWeb\Negocios\obj\Debug\Negocios.dll
 C:\Users\andre\Desktop\TF Web\EstacionamientoWeb\Negocios\obj\Debug\Negocios.pdb
+C:\Users\user\Desktop\Aplicaciones Web\EstacionamientoWeb\Negocios\bin\Debug\Negocios.dll
+C:\Users\user\Desktop\Aplicaciones Web\EstacionamientoWeb\Negocios\bin\Debug\Negocios.pdb
+C:\Users\user\Desktop\Aplicaciones Web\EstacionamientoWeb\Negocios\bin\Debug\Data.dll
+C:\Users\user\Desktop\Aplicaciones Web\EstacionamientoWeb\Negocios\bin\Debug\Entidades.dll
+C:\Users\user\Desktop\Aplicaciones Web\EstacionamientoWeb\Negocios\bin\Debug\Data.pdb
+C:\Users\user\Desktop\Aplicaciones Web\EstacionamientoWeb\Negocios\bin\Debug\Entidades.pdb
+C:\Users\user\Desktop\Aplicaciones Web\EstacionamientoWeb\Negocios\obj\Debug\Negocios.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\Aplicaciones Web\EstacionamientoWeb\Negocios\obj\Debug\Negocios.dll
+C:\Users\user\Desktop\Aplicaciones Web\EstacionamientoWeb\Negocios\obj\Debug\Negocios.pdb

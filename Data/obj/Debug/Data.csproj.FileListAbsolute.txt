@@ -25,3 +25,10 @@ C:\Users\andre\Desktop\TF Web\EstacionamientoWeb\Data\obj\Debug\Data.csproj.Core
 C:\Users\andre\Desktop\TF Web\EstacionamientoWeb\Data\obj\Debug\Data.csproj.CopyComplete
 C:\Users\andre\Desktop\TF Web\EstacionamientoWeb\Data\obj\Debug\Data.dll
 C:\Users\andre\Desktop\TF Web\EstacionamientoWeb\Data\obj\Debug\Data.pdb
+C:\Users\user\Desktop\Aplicaciones Web\EstacionamientoWeb\Data\bin\Debug\Data.dll
+C:\Users\user\Desktop\Aplicaciones Web\EstacionamientoWeb\Data\bin\Debug\Data.pdb
+C:\Users\user\Desktop\Aplicaciones Web\EstacionamientoWeb\Data\bin\Debug\Entidades.dll
+C:\Users\user\Desktop\Aplicaciones Web\EstacionamientoWeb\Data\bin\Debug\Entidades.pdb
+C:\Users\user\Desktop\Aplicaciones Web\EstacionamientoWeb\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\Aplicaciones Web\EstacionamientoWeb\Data\obj\Debug\Data.dll
+C:\Users\user\Desktop\Aplicaciones Web\EstacionamientoWeb\Data\obj\Debug\Data.pdb

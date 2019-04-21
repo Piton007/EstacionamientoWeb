@@ -4,34 +4,44 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entidades;
+using Data;
+using Data.Implementacion;
 
 namespace Negocios.Implementacion
 {
     public class EspacioServicioImpl : IEspacioServicio
     {
+
+        private IEstacionamientoRepository Estacionamiento = new EstacionamientoRepositoryImpl();
+        private IEspacioRepository espacio = new EspacioRepositoryImpl();
+
+
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            return espacio.Delete(id);
         }
 
         public List<Espacio> FindAll()
         {
-            throw new NotImplementedException();
+            return espacio.FindAll();
         }
 
         public Espacio FindById(int? id)
         {
-            throw new NotImplementedException();
+            return espacio.FindById(id);
         }
 
         public bool Insert(Espacio t)
         {
-            throw new NotImplementedException();
+            Estacionamiento estacionamiento = Estacionamiento.FindById(t.estacionamiento.Id);
+            t.estacionamiento = estacionamiento;
+            return espacio.Insert(t);
         }
 
         public bool Update(Espacio t)
         {
-            throw new NotImplementedException();
+            return espacio.Update(t);
         }
+
     }
 }

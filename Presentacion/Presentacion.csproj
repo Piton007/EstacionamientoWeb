@@ -133,6 +133,7 @@
     <Compile Include="App_Start\RouteConfig4.cs" />
     <Compile Include="App_Start\RouteConfig5.cs" />
     <Compile Include="Controllers\ComprobanteController.cs" />
+    <Compile Include="Controllers\EspacioController.cs" />
     <Compile Include="Controllers\EstacionamientoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IngresoController.cs" />
@@ -198,6 +199,11 @@
     <Content Include="Views\Ingreso\Delete.cshtml" />
     <Content Include="Views\Ingreso\Details.cshtml" />
     <Content Include="Views\PuntoAtencion\Details.cshtml" />
+    <Content Include="Views\Espacio\Index.cshtml" />
+    <Content Include="Views\Espacio\Edit.cshtml" />
+    <Content Include="Views\Espacio\Details.cshtml" />
+    <Content Include="Views\Espacio\Delete.cshtml" />
+    <Content Include="Views\Espacio\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
