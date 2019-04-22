@@ -19,8 +19,8 @@ namespace Data.Implementacion
                 using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
                 {
                     conn.Open();
-                    var query = new SqlCommand("DELETE FROM PuntoAtencion WHERE id_pAtencion=@id");
-                    query.Parameters.AddWithValue("@id", id);
+                    var query = new SqlCommand("DELETE FROM PuntoAtencion WHERE id_pAtencion='"+id+"'",conn);
+                 
                     query.ExecuteNonQuery();
                     seElimino = true;
                 }
@@ -47,9 +47,9 @@ namespace Data.Implementacion
                     {
                         while (dr.Read())
                         {
-                            PuntoAtencion pa = new PuntoAtencion();
+                           var pa = new PuntoAtencion();
                             pa.Id = Convert.ToInt32(dr["id_pAtencion"]);
-                            pa.Ubicacion = dr["ubicacion"].ToString();
+                            pa.Ubicacion = dr["Ubicacion"].ToString();
                             puntoAtenciones.Add(pa);
                         }
                     }
@@ -71,13 +71,14 @@ namespace Data.Implementacion
                 using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
                 {
                     conn.Open();
-                    var query = new SqlCommand("SELECT id_pAtencion, ubicacion FROM PuntoAtencion WHERE id_pAtencion=@id", conn);
-                    using (var dr = query.ExecuteReader())
+                    var query = new SqlCommand("SELECT id_pAtencion, Ubicacion FROM PuntoAtencion WHERE id_pAtencion=@id", conn);
+					query.Parameters.AddWithValue("@id", id);
+					using (var dr = query.ExecuteReader())
                     {
                         while (dr.Read())
                         {
                             pa.Id = Convert.ToInt32(dr["id_pAtencion"]);
-                            pa.Ubicacion = dr["ubicacion"].ToString();
+                            pa.Ubicacion = dr["Ubicacion"].ToString();
                         }
                     }
                 }
@@ -98,9 +99,9 @@ namespace Data.Implementacion
                 using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
                 {
                     conn.Open();
-                    var query = new SqlCommand("INSERT INTO PuntoAtencion(ubicacion) VALUES(@ubicacion)", conn);
+                    var query = new SqlCommand("INSERT INTO PuntoAtencion VALUES(@Ubicacion)", conn);
 
-                    query.Parameters.AddWithValue("@ubicacion", t.Ubicacion);
+                    query.Parameters.AddWithValue("@Ubicacion", t.Ubicacion);
                     query.ExecuteNonQuery();
                     seInserto = true;
                 }
@@ -121,7 +122,7 @@ namespace Data.Implementacion
                 using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
                 {
                     conn.Open();
-                    var query = new SqlCommand("UPDATE PuntoAtencion SET ubicacion = @ubi WHERE id_pAtencion=@id", conn);
+                    var query = new SqlCommand("UPDATE PuntoAtencion SET Ubicacion = @ubi WHERE id_pAtencion=@id", conn);
 
                     query.Parameters.AddWithValue("@id", t.Id);
                     query.Parameters.AddWithValue("@ubi", t.Ubicacion);

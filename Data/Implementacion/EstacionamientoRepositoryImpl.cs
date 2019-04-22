@@ -153,7 +153,8 @@ namespace Data.Implementacion
                     var query = new SqlCommand("Update Estacionamiento Set cod_local ='" + t.localizacion.CodLocalizacion
                                              + "'" + ", Nombre_Estacionamiento='" + t.Nombre
                                              + "'" + ", nro_Espacios='" + t.espacios
-                                             + "'" + ", Direccion='" + t.Direccion + "'" + " Where id_estacionamiento='" + t.Id + "'", connection);
+                                             + "'" + ", Direccion='" + t.Direccion
+											 + "'" + " Where id_estacionamiento='" + t.Id + "'", connection);
                     query.ExecuteNonQuery();
                     rpta = true;
                 }

@@ -23,3 +23,12 @@ C:\Users\0l0\Desktop\Aplicaciones WEB\GIT\Data\bin\Debug\Entidades.pdb
 C:\Users\0l0\Desktop\Aplicaciones WEB\GIT\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
 C:\Users\0l0\Desktop\Aplicaciones WEB\GIT\Data\obj\Debug\Data.dll
 C:\Users\0l0\Desktop\Aplicaciones WEB\GIT\Data\obj\Debug\Data.pdb
+C:\Users\Cesar Gutierrez\Desktop\aplicaciones Web\trabajo web\Data\bin\Debug\Data.dll
+C:\Users\Cesar Gutierrez\Desktop\aplicaciones Web\trabajo web\Data\bin\Debug\Data.pdb
+C:\Users\Cesar Gutierrez\Desktop\aplicaciones Web\trabajo web\Data\bin\Debug\Entidades.dll
+C:\Users\Cesar Gutierrez\Desktop\aplicaciones Web\trabajo web\Data\bin\Debug\Entidades.pdb
+C:\Users\Cesar Gutierrez\Desktop\aplicaciones Web\trabajo web\Data\obj\Debug\Data.csprojAssemblyReference.cache
+C:\Users\Cesar Gutierrez\Desktop\aplicaciones Web\trabajo web\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+C:\Users\Cesar Gutierrez\Desktop\aplicaciones Web\trabajo web\Data\obj\Debug\Data.csproj.CopyComplete
+C:\Users\Cesar Gutierrez\Desktop\aplicaciones Web\trabajo web\Data\obj\Debug\Data.dll
+C:\Users\Cesar Gutierrez\Desktop\aplicaciones Web\trabajo web\Data\obj\Debug\Data.pdb

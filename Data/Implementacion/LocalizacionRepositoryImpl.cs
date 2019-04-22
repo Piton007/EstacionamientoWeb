@@ -121,7 +121,7 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
                 {
                     con.Open();
-                    var query = new SqlCommand("UPDATE Localizacion SET nombre=@nombre WHERE cod_local=@doc", con);
+                    var query = new SqlCommand("UPDATE Localizacion SET nombre=@nombre WHERE cod_local=@cod", con);
                     query.Parameters.AddWithValue("@nombre", t.Nombre);
                     query.Parameters.AddWithValue("@cod", t.CodLocalizacion);
 

@@ -29,3 +29,14 @@ C:\Users\0l0\Desktop\Aplicaciones WEB\GIT\Negocios\bin\Debug\Entidades.pdb
 C:\Users\0l0\Desktop\Aplicaciones WEB\GIT\Negocios\obj\Debug\Negocios.csprojResolveAssemblyReference.cache
 C:\Users\0l0\Desktop\Aplicaciones WEB\GIT\Negocios\obj\Debug\Negocios.dll
 C:\Users\0l0\Desktop\Aplicaciones WEB\GIT\Negocios\obj\Debug\Negocios.pdb
+C:\Users\Cesar Gutierrez\Desktop\aplicaciones Web\trabajo web\Negocios\bin\Debug\Negocios.dll
+C:\Users\Cesar Gutierrez\Desktop\aplicaciones Web\trabajo web\Negocios\bin\Debug\Negocios.pdb
+C:\Users\Cesar Gutierrez\Desktop\aplicaciones Web\trabajo web\Negocios\bin\Debug\Data.dll
+C:\Users\Cesar Gutierrez\Desktop\aplicaciones Web\trabajo web\Negocios\bin\Debug\Entidades.dll
+C:\Users\Cesar Gutierrez\Desktop\aplicaciones Web\trabajo web\Negocios\bin\Debug\Data.pdb
+C:\Users\Cesar Gutierrez\Desktop\aplicaciones Web\trabajo web\Negocios\bin\Debug\Entidades.pdb
+C:\Users\Cesar Gutierrez\Desktop\aplicaciones Web\trabajo web\Negocios\obj\Debug\Negocios.csprojAssemblyReference.cache
+C:\Users\Cesar Gutierrez\Desktop\aplicaciones Web\trabajo web\Negocios\obj\Debug\Negocios.csproj.CoreCompileInputs.cache
+C:\Users\Cesar Gutierrez\Desktop\aplicaciones Web\trabajo web\Negocios\obj\Debug\Negocios.csproj.CopyComplete
+C:\Users\Cesar Gutierrez\Desktop\aplicaciones Web\trabajo web\Negocios\obj\Debug\Negocios.dll
+C:\Users\Cesar Gutierrez\Desktop\aplicaciones Web\trabajo web\Negocios\obj\Debug\Negocios.pdb

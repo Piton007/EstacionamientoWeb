@@ -15,3 +15,9 @@ C:\Users\0l0\Desktop\Aplicaciones WEB\GIT\Entidades\bin\Debug\Entidades.dll
 C:\Users\0l0\Desktop\Aplicaciones WEB\GIT\Entidades\bin\Debug\Entidades.pdb
 C:\Users\0l0\Desktop\Aplicaciones WEB\GIT\Entidades\obj\Debug\Entidades.dll
 C:\Users\0l0\Desktop\Aplicaciones WEB\GIT\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Cesar Gutierrez\Desktop\aplicaciones Web\trabajo web\Entidades\bin\Debug\Entidades.dll
+C:\Users\Cesar Gutierrez\Desktop\aplicaciones Web\trabajo web\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Cesar Gutierrez\Desktop\aplicaciones Web\trabajo web\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\Cesar Gutierrez\Desktop\aplicaciones Web\trabajo web\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Cesar Gutierrez\Desktop\aplicaciones Web\trabajo web\Entidades\obj\Debug\Entidades.dll
+C:\Users\Cesar Gutierrez\Desktop\aplicaciones Web\trabajo web\Entidades\obj\Debug\Entidades.pdb
