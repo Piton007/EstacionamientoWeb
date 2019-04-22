@@ -1,37 +1,41 @@
-﻿using System;
+﻿using Data;
+using Data.Implementacion;
+using Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Entidades;
 
 namespace Negocios.Implementacion
 {
-    public class TarifaServicioImpl : ITarifaServicio
+    public class TarifaServicioImpl:ITarifaServicio
     {
+        private ITarifaRepository tarifaRepository = new TarifaRepositoryImpl();
+
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            return tarifaRepository.Delete(id);
         }
 
         public List<Tarifa> FindAll()
         {
-            throw new NotImplementedException();
+            return tarifaRepository.FindAll();
         }
 
         public Tarifa FindById(int? id)
         {
-            throw new NotImplementedException();
+            return tarifaRepository.FindById(id);
         }
 
         public bool Insert(Tarifa t)
         {
-            throw new NotImplementedException();
+            return tarifaRepository.Insert(t);
         }
 
         public bool Update(Tarifa t)
         {
-            throw new NotImplementedException();
+            return tarifaRepository.Update(t);
         }
     }
 }

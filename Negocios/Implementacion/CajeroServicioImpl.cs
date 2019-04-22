@@ -3,34 +3,41 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Data;
+using Data.Implementacion;
 using Entidades;
 namespace Negocios.Implementacion
 {
     public class CajeroServicioImpl : ICajeroServicio
     {
-        public bool Delete(int id)
+		private IPuntoAtencionRepository punto_atencion = new PuntoAtencionRepositoryImpl();
+		private ICajeroRepository cajero = new CajeroRepositoryImpl();
+
+		public bool Delete(int id)
         {
-            throw new NotImplementedException();
-        }
+			return cajero.Delete(id);
+		}
 
         public List<Cajero> FindAll()
         {
-            throw new NotImplementedException();
+			return cajero.FindAll();
         }
 
         public Cajero FindById(int? id)
         {
-            throw new NotImplementedException();
+			return cajero.FindById(id);
         }
 
         public bool Insert(Cajero t)
         {
-            throw new NotImplementedException();
-        }
+			PuntoAtencion puntoA = punto_atencion.FindById(t.PuntoA.Id);
+			t.PuntoA = puntoA;
+			return cajero.Insert(t);
+		}
 
         public bool Update(Cajero t)
         {
-            throw new NotImplementedException();
+			return cajero.Update(t);
         }
     }
 }
