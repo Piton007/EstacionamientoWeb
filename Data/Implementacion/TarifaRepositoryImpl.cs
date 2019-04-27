@@ -16,7 +16,7 @@ namespace Data.Implementacion
             bool rpta = false;
             try
             {
-                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
                 {
                     con.Open();
                     var query = new SqlCommand("DELETE FROM Tarifa WHERE id_Tarifa='" + id + "'", con);
@@ -37,7 +37,7 @@ namespace Data.Implementacion
             var tarifas = new List<Tarifa>();
             try
             {
-                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
                 {
                     con.Open();
 
@@ -68,7 +68,7 @@ namespace Data.Implementacion
             Tarifa tarifa = new Tarifa();
             try
             {
-                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
                 {
                     con.Open();
                     var query = new SqlCommand("SELECT * FROM Tarifa WHERE id_Tarifa=@tarifa", con);
@@ -98,7 +98,7 @@ namespace Data.Implementacion
             bool rpta = false;
             try
             {
-                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
                 {
                     con.Open();
                     var query = new SqlCommand("INSERT INTO Tarifa VALUES(@Tarifa,@Tipo_Veh)", con);
@@ -121,7 +121,7 @@ namespace Data.Implementacion
             bool rpta = false;
             try
             {
-                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
                 {
                     con.Open();
                     var query = new SqlCommand("UPDATE Tarifa SET Tipo_Veh=@Tipo_Veh, Tarifa=@Tarifa WHERE Id_Tarifa=@id", con);

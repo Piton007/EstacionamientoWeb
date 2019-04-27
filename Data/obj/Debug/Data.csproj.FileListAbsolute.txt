@@ -1,9 +1,0 @@
-D:\EstacionamientoTF\Data\bin\Debug\Data.dll
-D:\EstacionamientoTF\Data\bin\Debug\Data.pdb
-D:\EstacionamientoTF\Data\bin\Debug\Entidades.dll
-D:\EstacionamientoTF\Data\bin\Debug\Entidades.pdb
-D:\EstacionamientoTF\Data\obj\Debug\Data.csprojAssemblyReference.cache
-D:\EstacionamientoTF\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
-D:\EstacionamientoTF\Data\obj\Debug\Data.csproj.CopyComplete
-D:\EstacionamientoTF\Data\obj\Debug\Data.dll
-D:\EstacionamientoTF\Data\obj\Debug\Data.pdb

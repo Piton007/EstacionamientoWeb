@@ -23,14 +23,13 @@ namespace Presentacion.Controllers
 
 		public ActionResult Create()
 		{
-		
-			ViewBag.punto_atencion = puntoAtencion.FindAll();
+			ViewBag.puntoAtenciones = puntoAtencion.FindAll();
 			return View();
 		}
 		[HttpPost]
 		public ActionResult Create(Cajero cajero)
 		{
-			ViewBag.punto_atencion = puntoAtencion.FindAll();
+			ViewBag.puntoAtenciones = puntoAtencion.FindAll();
 			bool rpta = CajeroService.Insert(cajero);
 			if (rpta)
 			{
@@ -51,7 +50,7 @@ namespace Presentacion.Controllers
 		[HttpPost]
 		public ActionResult Delete(Cajero cajero)
 		{
-			ViewBag.punto_atencion = puntoAtencion.FindAll();
+			ViewBag.puntoAtenciones = puntoAtencion.FindAll();
 			bool rpta = CajeroService.Delete(cajero.Id);
 			if (rpta)
 			{
@@ -61,7 +60,7 @@ namespace Presentacion.Controllers
 		}
 		public ActionResult Edit(int? id)
 		{
-			ViewBag.punto_atencion = puntoAtencion.FindAll();
+			ViewBag.puntoAtenciones = puntoAtencion.FindAll();
 			if (id == null)
 			{
 				return HttpNotFound();

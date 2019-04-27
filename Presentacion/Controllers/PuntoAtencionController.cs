@@ -34,15 +34,16 @@ namespace Presentacion.Controllers
         }
 
         //GET
-        public ActionResult Delete()
+        public ActionResult Delete(int id)
         {
-            return View();
+            var pa = paServicio.FindAll().Where(p => p.Id == id).FirstOrDefault();
+            return View(pa);
         }
 
         [HttpPost]
-        public ActionResult Delete(int id)
+        public ActionResult Delete(PuntoAtencion pa)
         {
-            bool elimino = paServicio.Delete(id);
+            bool elimino = paServicio.Delete(pa.Id);
             if (elimino)
                 return RedirectToAction("Index");
             return View();
@@ -61,6 +62,13 @@ namespace Presentacion.Controllers
             if (actualizo)
                 return RedirectToAction("Index");
             return View();
+        }
+
+        //GET
+        public ActionResult Details(int? id)
+        {
+            var pa = paServicio.FindAll().Where(p => p.Id == id).FirstOrDefault();
+            return View(pa);
         }
     }
 }

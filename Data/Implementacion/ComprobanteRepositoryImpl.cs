@@ -16,7 +16,7 @@ namespace Data.Implementacion
             try
             {
                 using (var connection= new SqlConnection(System.Configuration.ConfigurationManager
-                    .ConnectionStrings["EstacionamientoDB"].ToString()))
+                    .ConnectionStrings["Estacionamiento"].ToString()))
                 {
                     connection.Open();
                     var query = new SqlCommand("Delete from Comprobante Where id_boleta='" + id + "'", connection);
@@ -37,10 +37,10 @@ namespace Data.Implementacion
             var comprobantes = new List<Comprobante>();
             try
             {
-                using (var connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
+                using (var connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
                 {
                     connection.Open();
-                    var query = new SqlCommand("Select C.id_boleta,C.Fecha_final,C.Monto,C.cod_registro,I.Fecha_reg" +
+                    var query = new SqlCommand("Select C.id_boleta,C.Fecha_Inicio,C.Monto,C.cod_registro,I.Fecha_reg" +
                         " from Comprobante as C inner join Ingreso as I on I.cod_Registro=C.cod_Registro",connection);
 
                     using (var dr = query.ExecuteReader())
@@ -79,7 +79,7 @@ namespace Data.Implementacion
             Comprobante comprobante = new Comprobante();
             try
             {
-                using (var connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
+                using (var connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
                 {
                     connection.Open();
                     var query = new SqlCommand("Select C.id_boleta,C.Fecha_final,C.Monto,C.cod_registro,I.Fecha_reg" +
@@ -114,7 +114,7 @@ namespace Data.Implementacion
             bool rpta = false;
             try
             {
-                using (var connection= new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
+                using (var connection= new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
                 {
                     connection.Open();
                     var query = new SqlCommand("Insert into Comprobante values(@cod_registro,@Monto,@Fecha_Final)", connection);
@@ -138,7 +138,7 @@ namespace Data.Implementacion
             bool rpta = false;
             try
             {
-                using (var connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
+                using (var connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
                 {
                     connection.Open();
                     var query = new SqlCommand("Update Comprobante Set cod_Registro=@registro,Fecha_Final=@fecha,Monto=@monto where id_boleta=@id", connection);

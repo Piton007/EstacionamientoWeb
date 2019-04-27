@@ -1,5 +1,0 @@
-D:\EstacionamientoTF\Entidades\bin\Debug\Entidades.dll
-D:\EstacionamientoTF\Entidades\bin\Debug\Entidades.pdb
-D:\EstacionamientoTF\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
-D:\EstacionamientoTF\Entidades\obj\Debug\Entidades.dll
-D:\EstacionamientoTF\Entidades\obj\Debug\Entidades.pdb

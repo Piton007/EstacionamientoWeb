@@ -15,7 +15,7 @@ namespace Data.Implementacion
             bool rpta = false;
             try
             {
-                using (var connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Espacio"].ToString()))
+                using (var connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
                 {
                     connection.Open();
                     var query = new SqlCommand("Delete  from Espacio Where id_Espacio='" + id + "'", connection);
@@ -72,11 +72,11 @@ namespace Data.Implementacion
             Espacio espacio = null;
             try
             {
-                using (var con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Espacio"].ToString()))
+                using (var con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
                 {
                     con.Open();
 
-                    var query = new SqlCommand("SELECT E.id_Espacio, E.Disponibilidad, E.id_estacionamiento  from Espacio as E inner join Estacionamiento as Et on L.id_estacionamientos=E.id_estacionamiento " +
+                    var query = new SqlCommand("SELECT E.id_Espacio, E.Disponibilidad, E.id_estacionamiento  from Espacio as E inner join Estacionamiento as ES on E.id_estacionamientos=ES.id_estacionamiento " +
                         "WHERE id_Espacio='" + id + "'", con);
                     using (var dr = query.ExecuteReader())
                     {
@@ -106,7 +106,7 @@ namespace Data.Implementacion
             try
             {
                 using (SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager
-                    .ConnectionStrings["Espacio"].ToString()))
+                    .ConnectionStrings["Estacionamiento"].ToString()))
                 {
                     con.Open();
                     var query = new SqlCommand("INSERT INTO Espacio VALUES( @id_estacionamiento,@Disponibilidad)", con);
@@ -129,7 +129,7 @@ namespace Data.Implementacion
             bool rpta = false;
             try
             {
-                using (var connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Espacio"].ToString()))
+                using (var connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
                 {
                     connection.Open();
                     var query = new SqlCommand("Update Espacio Set id_estacionamiento ='" + t.estacionamiento.Id

@@ -1,53 +1,34 @@
 ﻿@model IEnumerable<Entidades.Espacio>
 
 @{
-    ViewBag.Title = "Espacios";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Index</h2>
+
 <p>
     @Html.ActionLink("Create New", "Create")
-    @Html.ActionLink("Edit","Edit")
-    @Html.ActionLink("Delete","Delete")
-
 </p>
 <table class="table">
-
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.estacionamiento.Nombre)
+            @Html.DisplayNameFor(model => model.Disponible)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Id)
-            
-        </th>
-        <th>
-           @Html.DisplayNameFor(model => model.Disponible)
-        </th>
-       
+        <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(model => item.estacionamiento.Nombre)
+            @Html.DisplayFor(modelItem => item.Disponible)
         </td>
         <td>
-            @Html.DisplayFor(model => item.Id)
-        </td>
-
-        <td>
-            @Html.DisplayFor(model => item.Disponible)
-        </td>
-      
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.Id })
-            @Html.ActionLink("Details", "Details", new { id = item.Id })
-            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>
 }
-</table>
 
+</table>

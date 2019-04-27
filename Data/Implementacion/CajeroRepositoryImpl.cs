@@ -15,7 +15,7 @@ namespace Data.Implementacion
 			bool rpta = false;
 			try
 			{
-				using (var conexion = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
+				using (var conexion = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
 				{
 					conexion.Open();
 					var query = new SqlCommand("Delete  from Cajero Where id_cajero='" + id + "'", conexion);
@@ -36,7 +36,7 @@ namespace Data.Implementacion
 			var cajeros = new List<Cajero>();
 			try
 			{
-				using (var conexion = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
+				using (var conexion = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
 				{
 					conexion.Open();
 					var query = new SqlCommand("Select C.id_cajero, C.Nombre, C.Turno,C.id_pAtencion,PA.Ubicacion  from Cajero as C inner join PuntoAtencion as PA on C.id_pAtencion=PA.id_pAtencion ", conexion);
@@ -72,10 +72,10 @@ namespace Data.Implementacion
 
 		public Cajero FindById(int? id)
 		{
-			Cajero cajero= null;
+			Cajero cajero= new Cajero();
 			try
 			{
-				using (var conexion = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
+				using (var conexion = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
 				{
 					conexion.Open();
 
@@ -85,7 +85,6 @@ namespace Data.Implementacion
 					{
 						while (dr.Read())
 						{
-							cajero = new Cajero();
 							PuntoAtencion punto_atencion = new PuntoAtencion();
 						    cajero.Id = Convert.ToInt32(dr["id_cajero"]);
 							cajero.Nombre = dr["Nombre"].ToString();
@@ -112,10 +111,10 @@ namespace Data.Implementacion
 			try
 			{
 				using (SqlConnection conexion = new SqlConnection(System.Configuration.ConfigurationManager
-					.ConnectionStrings["EstacionamientoDB"].ToString()))
+					.ConnectionStrings["Estacionamiento"].ToString()))
 				{
 					conexion.Open();
-					var query = new SqlCommand("INSERT INTO Cajero VALUES( @id_pAtencion,@Nombre,@Turno)", conexion);
+					var query = new SqlCommand("INSERT INTO Cajero VALUES(@id_pAtencion,@Nombre,@Turno)", conexion);
 					query.Parameters.AddWithValue("@Nombre", t.Nombre);
 					query.Parameters.AddWithValue("@Turno", t.Turno);
 					query.Parameters.AddWithValue("@id_pAtencion", t.PuntoA.Id);
@@ -138,7 +137,7 @@ namespace Data.Implementacion
 			bool rpta = false;
 			try
 			{
-				using (var conexion = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
+				using (var conexion = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
 				{
 					conexion.Open();
 					var query = new SqlCommand("Update Cajero Set Nombre=@Nombre,Turno=@Turno WHERE id_pAtencion=@id ", conexion);

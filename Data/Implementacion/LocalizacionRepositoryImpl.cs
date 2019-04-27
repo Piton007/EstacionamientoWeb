@@ -16,7 +16,7 @@ namespace Data.Implementacion
             bool rpta = false;
             try
             {
-                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
                 {
                     con.Open();
                     var query = new SqlCommand("DELETE FROM Localizacion WHERE id_Tarifa='" + id + "'", con);
@@ -37,7 +37,7 @@ namespace Data.Implementacion
             var locales = new List<Localizacion>();
             try
             {
-                using (var connection=new SqlConnection(ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
+                using (var connection=new SqlConnection(ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
                 {
                     connection.Open();
                     var query = new SqlCommand("Select l.cod_local, l.nombre FROM Localizacion l", connection);
@@ -68,7 +68,7 @@ namespace Data.Implementacion
             Localizacion localizacion = new Localizacion();
             try
             {
-                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
                 {
                     con.Open();
 
@@ -96,10 +96,10 @@ namespace Data.Implementacion
             bool rpta = false;
             try
             {
-                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
                 {
                     con.Open();
-                    var query = new SqlCommand("INSERT INTO Localizacion VALUES(@nombre)", con);
+                    var query = new SqlCommand("INSERT INTO Localizacion(nombre) VALUES(@nombre)", con);
                     query.Parameters.AddWithValue("@nombre", t.Nombre);
 
                     query.ExecuteNonQuery();
@@ -118,7 +118,7 @@ namespace Data.Implementacion
             bool rpta = false;
             try
             {
-                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
                 {
                     con.Open();
                     var query = new SqlCommand("UPDATE Localizacion SET nombre=@nombre WHERE cod_local=@cod", con);

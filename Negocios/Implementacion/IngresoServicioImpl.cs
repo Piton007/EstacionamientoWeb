@@ -12,6 +12,9 @@ namespace Negocios.Implementacion
     public class IngresoServicioImpl : IIngresoServicio
     {
         private IIngresoRepository ingresoRepository = new IngresoRepositoryImpl();
+        private ITarifaRepository tarifaRepository = new TarifaRepositoryImpl();
+        private ICajeroRepository cajeroRepository = new CajeroRepositoryImpl();
+        private IEspacioRepository espacioRepository = new EspacioRepositoryImpl();
         public bool Delete(int id)
         {
             return ingresoRepository.Delete(id);
@@ -29,6 +32,10 @@ namespace Negocios.Implementacion
 
         public bool Insert(Ingreso t)
         {
+            t.FechaIngreso = DateTime.Today;
+            //t.Espacio= espacioRepository.FindById(t.Espacio.Id);
+            //t.Cajero = cajeroRepository.FindById(t.Cajero.Id);
+            //t.Tarifa = tarifaRepository.FindById(t.Tarifa.Id);
             return ingresoRepository.Insert(t);
         }
 

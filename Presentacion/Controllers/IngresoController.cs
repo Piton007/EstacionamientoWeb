@@ -34,6 +34,9 @@ namespace Presentacion.Controllers
         [HttpPost]
         public ActionResult Create(Ingreso ing)
         {
+            ViewBag.tarifas = tarifaServicio.FindAll();
+            ViewBag.cajeros = cajeroServicio.FindAll();
+            ViewBag.espacios = espacioServicio.FindAll();
             bool inserto = ingresoServicio.Insert(ing);
             if (inserto)
                 return RedirectToAction("Create");
