@@ -167,7 +167,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -211,20 +213,16 @@
     <Content Include="Views\PuntoAtencion\Details.cshtml" />
     <Content Include="Views\PuntoAtencion\Edit.cshtml" />
     <Content Include="Views\PuntoAtencion\Index.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\Ingreso\Create.cshtml" />
     <Content Include="Views\Ingreso\Index.cshtml" />
     <Content Include="Views\Ingreso\Edit.cshtml" />
     <Content Include="Views\Ingreso\Delete.cshtml" />
     <Content Include="Views\Ingreso\Details.cshtml" />
-    <Content Include="Views\PuntoAtencion\Details.cshtml" />
     <Content Include="Views\Espacio\Index.cshtml" />
     <Content Include="Views\Espacio\Edit.cshtml" />
     <Content Include="Views\Espacio\Details.cshtml" />
     <Content Include="Views\Espacio\Delete.cshtml" />
     <Content Include="Views\Espacio\Create.cshtml" />
-=======
->>>>>>> e9f5636b1a1192e90c523ff4a972bff0b3b358f7
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
