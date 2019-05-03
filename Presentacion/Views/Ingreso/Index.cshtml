@@ -1,141 +1,125 @@
-﻿
-@model Entidades.Ingreso
-@{
-    /**/
+﻿@model IEnumerable<Entidades.Ingreso>
 
-    ViewBag.Title = "Ingreso";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
 
+
+
+<br /><br />
+<div class="container" >
+	<b>Search By : </b>
+	<select id="SearchBy">
+		<option value="Id">codigo_registro</option>
+		<option value="Placa">Placa</option>
+	</select><br /><br />
+	@Html.TextBox("Search")<input type="submit" id="SearchBtn" value="Search" /><br /><br />
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>codigo</th>
+				<th>Tarifa</th>
+				<th>Cajero</th>
+				<th>Placa</th>
+				<th>Fecha</th>
+				<th>Espacio</th>
+			</tr>
+		</thead>
+		<tbody id="DataSearching">
+			@foreach (var Item in Model)
+			{
+
+				<tr>
+					<td>@Item.CodIngreso</td>
+					<td>@Item.Tarifa.Id</td>
+					<td>@Item.Cajero.Id</td>
+					<td>@Item.Placa</td>
+					<td>@Item.FechaIngreso</td>
+					<td>@Item.Espacio.Id</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>
 <script src="~/Scripts/jquery-3.3.1.min.js"></script>
-<script src="~/Scripts/bootstrap.min.js"></script>
-<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-<div class="container" style="margin-top:5%">
-    <a href="#" class="btn btn-info" onclick="NewIngreso(0)">Nuevo Ingreso</a> <br /><br />
+<script>
+	$(document).ready(function () {
+		$("#SearchBtn").click(function () {
 
-    <!-- Modal -->
-    <div class="modal fade" id="Ingreso">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 id="IngresoModalLabel">Crear Ingreso</h4>
-                    <a href="#" class="close" data-dismiss="modal">&times;</a>
-                </div>
-                <div class="modal-body">
-                    <form id="form">
-                        <fieldset id="SubmitForm">
-                            @Html.HiddenFor(m => m.CodIngreso, new { @id = "CodIngreso" });
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.Placa, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-10">
-               
-                                    @Html.TextBoxFor(m => m.Placa, new { @id = "Placa", @class = "form-control", @placeholder = "Placa*" })
-                                    @Html.ValidationMessageFor(m => m.Placa, "", new { @class = "text-danger" })
-                                </div>
+			var SearchValue = $("#Search").val();
+			var SetData = $("#DataSearching");
+			SetData.html("");
+			$.ajax({
+				type: "post",
+				url: "/Ingreso/GetSearchingData?SearchValue=" + SearchValue,
+				contentType: "html",
+				success: function (result) {
+					if (result.length == 0) {
+						SetData.append('<tr style="color:red"><td colspan="3">No Match Data</td></tr>')
+					}
+					else {
+						$.each(result, function (index, value) {
+							var Data = "<tr>" +
+								"<td>" + value.CodIngreso + "</td>" +
+								"<td>" + value.Tarifa.Id + "</td>" +
+								"<td>" + value.Cajero.Id + "</td>" +
+								"<td>" + value.Placa + "</td>" +
+								"<td>" + value.FechaIngreso + "</td>" +
+								"<td>" + value.Espacio.Id + "</td>"
+							"</tr>";
+							SetData.append(Data);
 
-
-                            </div>
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.Tarifa.TipoVehiculo, htmlAttributes: new { @class = "control-label col-md-2" })
-
-                                <div class="col-md-10">
-                                    @Html.DropDownListFor(m => m.Tarifa.Id, new SelectList(ViewBag.Tarifas, "Id", "TipoVehiculo"), "--Tipo Vehiculo--", "")
-                                    @Html.ValidationMessageFor(m => m.Tarifa.TipoVehiculo, "", new { @class = "text-danger" })
-                                </div>
-
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary" id="SaveIngreso">Save</button>
-                            </div>
-                        </fieldset>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    </div>
-
-    <script>
-
-        $("#SaveIngreso").click(function () {
-            var data = $("#SubmitForm").serialize();
-            $.ajax({
-                type: "Post",
-                url: "/Ingreso/GuardarIngreso",
-                data: data,
-                success: function (result) {
-                        alert("Sucess!...")
-                        window.location.href = "/Ingreso/Index";
-                        $("#Ingreso").modal("hide");
-                    
-                    
-
-                }
+						});
+					}
+				}
+			});
+		});
+	});
+</script>
 
 
 
-            })
-        })
 
-        function NewIngreso(Id) {
-            $("#form")[0].reset();
-            $("#Id").val(0);
-            $("#DropDwn option:selected").text("--Select Tarifa--");
-            $("#IngresoModalLabel").html("Nuevo Ingreso");
-            $("#Ingreso").modal();
+@*@model IEnumerable<Entidades.Ingreso>
 
-        }
+	@{
+		ViewBag.Title = "Index";
+		Layout = "~/Views/Shared/_Layout.cshtml";
+	}
 
+	<h2>Index</h2>
 
+	<p>
+		@Html.ActionLink("Create New", "Create")
+	</p>
+	<table class="table">
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.CodIngreso)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Placa)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.FechaIngreso)
+			</th>
+			<th></th>
+		</tr>
 
-    </script>
+	@foreach (var item in Model) {
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.CodIngreso)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Placa)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.FechaIngreso)
+			</td>
+			<td>
+				@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+				@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+				@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+			</td>
+		</tr>
+	}
 
-
-    @*@model IEnumerable<Entidades.Ingreso>
-
-        @{
-            ViewBag.Title = "Index";
-            Layout = "~/Views/Shared/_Layout.cshtml";
-        }
-
-        <h2>Index</h2>
-
-        <p>
-            @Html.ActionLink("Create New", "Create")
-        </p>
-        <table class="table">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.CodIngreso)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Placa)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.FechaIngreso)
-                </th>
-                <th></th>
-            </tr>
-
-        @foreach (var item in Model) {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CodIngreso)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Placa)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FechaIngreso)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-                </td>
-            </tr>
-        }
-
-        </table>*@
+	</table>*@

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Entidades;
+using Negocios;
+using Negocios.Implementacion;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,12 +10,16 @@ using System.Web.Mvc;
 namespace Presentacion.Controllers
 {
     public class HomeController : Controller
+
     {
-        public ActionResult Index()
+
+		
+		public ActionResult Index()
         {
             return View();
         }
 
-        
-    }
+
+		
+	}
 }
