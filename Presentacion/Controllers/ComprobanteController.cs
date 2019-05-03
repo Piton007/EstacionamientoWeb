@@ -17,6 +17,7 @@ namespace Presentacion.Controllers
         // GET: Comprobante
         public ActionResult Index()
         {
+            ViewBag.Tarifas = ingreso.FindAll();
             return View(comprobante.FindAll());
         }
         public ActionResult Create()
@@ -88,5 +89,22 @@ namespace Presentacion.Controllers
 
             return View(nuevo);
         }
+
+        /////////////////////////// JSonResult
+        public JsonResult GetSearchingData(string SearchBy, string SearchValue)
+        {
+            List<Comprobante> ComList = new List<Comprobante>();
+            try
+            {
+                int Id = Convert.ToInt32(SearchValue);
+                ComList.Add(comprobante.FindById(Id));
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("{0} Is Not A ID ", SearchValue);
+            }
+            return Json(ComList, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }
