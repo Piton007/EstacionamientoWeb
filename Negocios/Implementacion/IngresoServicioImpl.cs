@@ -32,7 +32,8 @@ namespace Negocios.Implementacion
 
         public bool Insert(Ingreso t)
         {
-            t.FechaIngreso = DateTime.Today;
+            t.FechaIngreso = DateTime.Now;
+            t.Placa = t.Placa.Trim();
             //t.Espacio= espacioRepository.FindById(t.Espacio.Id);
             //t.Cajero = cajeroRepository.FindById(t.Cajero.Id);
             //t.Tarifa = tarifaRepository.FindById(t.Tarifa.Id);

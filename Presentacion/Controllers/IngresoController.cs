@@ -18,7 +18,8 @@ namespace Presentacion.Controllers
         // GET: Ingreso
         public ActionResult Index()
         {
-            return View(ingresoServicio.FindAll());
+            ViewBag.Tarifas = tarifaServicio.FindAll();
+            return View();
         }
 
         //GET
@@ -98,6 +99,52 @@ namespace Presentacion.Controllers
             }
 
             return View(ingresoServicio.FindById(id));
+        }
+
+        public JsonResult GuardarIngreso(Ingreso ingreso)
+        {
+            var result = false;
+            try
+            {
+                
+                
+                
+                   
+
+
+
+                    Cajero cajero = new Cajero();
+                    Espacio espacio = new Espacio();
+                    Tarifa tarifa = new Tarifa();
+                    tarifa.Id = ingreso.Tarifa.Id;
+                    cajero.Id = 1;
+                    espacio.Id = 16;
+
+
+                    Ingreso ingresonew = new Ingreso();
+                    ingresonew.CodIngreso = ingreso.CodIngreso;
+                    ingresonew.Placa = ingreso.Placa;
+                    ingresonew.Tarifa = tarifa;
+                    ingresonew.Cajero = cajero;
+                    ingresonew.Espacio = espacio;
+
+                    result = ingresoServicio.Insert(ingresonew);
+
+
+                
+
+
+
+
+
+
+            }
+            catch (Exception ex )
+            {
+
+                throw ex;
+            }
+            return Json(result, JsonRequestBehavior.AllowGet);
         }
     }
 }
