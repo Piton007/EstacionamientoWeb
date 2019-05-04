@@ -96,7 +96,9 @@ namespace Data.Implementacion
                     var query = new SqlCommand("select * from Ingreso i inner join Tarifa t on i.id_Tarifa = t.id_Tarifa " +
                     "inner join Espacio e on i.id_Espacio = e.id_Espacio " +
                     "inner join Cajero c on i.id_Cajero = c.id_cajero WHERE i.cod_registro=@id", conn);
-                    using (var dr = query.ExecuteReader())
+					query.Parameters.AddWithValue("@id", id);
+
+					using (var dr = query.ExecuteReader())
                     {
                         while (dr.Read())
                         {
