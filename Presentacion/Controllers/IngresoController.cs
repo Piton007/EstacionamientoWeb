@@ -18,6 +18,11 @@ namespace Presentacion.Controllers
         // GET: Ingreso
         public ActionResult Index()
         {
+
+            
+            
+
+
             ViewBag.Tarifas = tarifaServicio.FindAll();
             return View(ingresoServicio.FindAll());
         }
@@ -44,8 +49,8 @@ namespace Presentacion.Controllers
 
 
 
-		//GET
-		public ActionResult Create()
+		
+		public ActionResult Create(int? idcajero)
         {
             ViewBag.tarifas = tarifaServicio.FindAll();
             ViewBag.cajeros = cajeroServicio.FindAll();
@@ -53,15 +58,28 @@ namespace Presentacion.Controllers
             return View();
         }
 
-        //POST
+        
         [HttpPost]
         public ActionResult Create(Ingreso ing)
         {
+            
+
+            //Cajero cajero=
+
+
+
             ViewBag.tarifas = tarifaServicio.FindAll();
             ViewBag.cajeros = cajeroServicio.FindAll();
             ViewBag.espacios = espacioServicio.FindAll();
+            
+            //Cajero cajero=
+
+            ViewBag.cajero =// //Buscar un cajero por id 1;
+
+            ing.Cajero.Id = 1;
+
             bool inserto = ingresoServicio.Insert(ing);
-            if (inserto)
+            if (!ModelState.IsValid)
                 return RedirectToAction("Create");
             return View();
         }
