@@ -13,9 +13,11 @@ namespace Presentacion.Controllers
     {
         private IEstacionamientoServicio estacionamientoServicio = new EstacionamientoServicioImpl();
         private ILocalizacionServicio localizacionServicio = new LocalizacionServicioImpl();
+        private IEspacioServicio EspacioServicio = new EspacioServicioImpl();
         // GET: Estacionamiento
         public ActionResult Index()
         {
+            ViewBag.Count =  EspacioServicio.FindAll().Count();
             return View(estacionamientoServicio.FindAll());
         }
         public ActionResult Create()
