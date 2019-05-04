@@ -7,6 +7,7 @@ using Entidades;
 namespace Data
 {
     public interface IEspacioRepository: ICRUDRepository<Espacio>
-    {
+    { 
+
     }
 }

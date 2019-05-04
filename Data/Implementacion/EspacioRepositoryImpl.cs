@@ -36,7 +36,7 @@ namespace Data.Implementacion
             var espacios = new List<Espacio>();
             try
             {
-                using (var connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
+                using (var connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
                 {
                     connection.Open();
                     var query = new SqlCommand("Select E.id_Espacio, E.Disponibilidad, E.id_estacionamiento from Espacio as E inner join Estacionamiento as Et on Et.id_estacionamiento=E.id_estacionamiento ", connection);
@@ -72,7 +72,7 @@ namespace Data.Implementacion
             Espacio espacio = null;
             try
             {
-                using (var con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
+                using (var con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
                 {
                     con.Open();
 
@@ -106,7 +106,7 @@ namespace Data.Implementacion
             try
             {
                 using (SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager
-                    .ConnectionStrings["Estacionamiento"].ToString()))
+                    .ConnectionStrings["EstacionamientoDB"].ToString()))
                 {
                     con.Open();
                     var query = new SqlCommand("INSERT INTO Espacio VALUES( @id_estacionamiento,@Disponibilidad)", con);
