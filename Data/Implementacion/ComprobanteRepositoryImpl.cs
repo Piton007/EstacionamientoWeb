@@ -37,7 +37,7 @@ namespace Data.Implementacion
             var comprobantes = new List<Comprobante>();
             try
             {
-                using (var connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
+                using (var connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
                 {
                     connection.Open();
                     var query = new SqlCommand("Select C.id_boleta,C.Fecha_Inicio,C.Monto,C.cod_registro,I.Fecha_reg" +
