@@ -17,7 +17,7 @@ namespace Presentacion.Controllers
         // GET: Estacionamiento
         public ActionResult Index()
         {
-            ViewBag.Count =  EspacioServicio.FindAll().Count();
+            
             return View(estacionamientoServicio.FindAll());
         }
         public ActionResult Create()
@@ -105,7 +105,8 @@ namespace Presentacion.Controllers
 
         public ActionResult Details(int? id)
         {
-            if (id == null)
+			ViewBag.Count = EspacioServicio.FindAll().Count();
+			if (id == null)
             {
                 return HttpNotFound();
             }
