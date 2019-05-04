@@ -50,10 +50,10 @@ namespace Presentacion.Controllers
 
 
 		
-		public ActionResult Create(int? idcajero)
+		public ActionResult Create()
         {
             ViewBag.tarifas = tarifaServicio.FindAll();
-            ViewBag.cajeros = cajeroServicio.FindAll();
+            ViewBag.cajeros = cajeroServicio.FindById(1);
             ViewBag.espacios = espacioServicio.FindAll();
             return View();
         }
@@ -62,25 +62,20 @@ namespace Presentacion.Controllers
         [HttpPost]
         public ActionResult Create(Ingreso ing)
         {
-            
 
-            //Cajero cajero=
-
-
-
-            ViewBag.tarifas = tarifaServicio.FindAll();
-            ViewBag.cajeros = cajeroServicio.FindAll();
-            ViewBag.espacios = espacioServicio.FindAll();
-            
-            //Cajero cajero=
-
-            ViewBag.cajero =// //Buscar un cajero por id 1;
-
-            ing.Cajero.Id = 1;
-
-            bool inserto = ingresoServicio.Insert(ing);
             if (!ModelState.IsValid)
                 return RedirectToAction("Create");
+
+            ViewBag.tarifas = tarifaServicio.FindAll();
+            ViewBag.cajeros = cajeroServicio.FindById(1);
+            ViewBag.espacios = espacioServicio.FindAll();
+            
+
+            ing.Cajero = cajeroServicio.FindById(1);
+            
+
+            bool result = ingresoServicio.Insert(ing);
+            
             return View();
         }
 

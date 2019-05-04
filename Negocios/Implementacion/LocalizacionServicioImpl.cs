@@ -29,6 +29,7 @@ namespace Negocios.Implementacion
 
         public bool Insert(Localizacion t)
         {
+           
             return localizacionRepository.Insert(t);
         }
 

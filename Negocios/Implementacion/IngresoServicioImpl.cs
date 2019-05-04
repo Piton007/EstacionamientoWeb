@@ -37,6 +37,9 @@ namespace Negocios.Implementacion
             //t.Espacio= espacioRepository.FindById(t.Espacio.Id);
             //t.Cajero = cajeroRepository.FindById(t.Cajero.Id);
             //t.Tarifa = tarifaRepository.FindById(t.Tarifa.Id);
+            var espacionew=espacioRepository.FindById(t.Espacio.Id);
+            espacionew.Disponible = false;
+            espacioRepository.Update(espacionew);
             return ingresoRepository.Insert(t);
         }
 

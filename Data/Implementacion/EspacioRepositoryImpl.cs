@@ -76,7 +76,7 @@ namespace Data.Implementacion
                 {
                     con.Open();
 
-                    var query = new SqlCommand("SELECT E.id_Espacio, E.Disponibilidad, E.id_estacionamiento  from Espacio as E inner join Estacionamiento as ES on E.id_estacionamientos=ES.id_estacionamiento " +
+                    var query = new SqlCommand("SELECT E.id_Espacio, E.Disponibilidad, E.id_estacionamiento  from Espacio as E inner join Estacionamiento as ES on E.id_estacionamiento=ES.id_estacionamiento " +
                         "WHERE id_Espacio='" + id + "'", con);
                     using (var dr = query.ExecuteReader())
                     {

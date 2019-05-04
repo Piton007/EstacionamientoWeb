@@ -1,7 +1,7 @@
 ﻿@model Entidades.Ingreso
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Generar Ingreso";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -13,7 +13,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Ingreso</h4>
+        <h4>  Cajero:  @Html.Raw(ViewBag.cajeros.Nombre)</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
@@ -27,14 +27,23 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Tarifa.TipoVehiculo, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.Tarifa.TipoVehiculo,
+                @Html.DropDownListFor(model => model.Tarifa.Id,
                                new SelectList(ViewBag.Tarifas, "Id", "TipoVehiculo", "")
                                , "---Select---", "")
                 
                 @Html.ValidationMessageFor(model => model.Tarifa.TipoVehiculo, "", new { @class = "text-danger" })
             </div>
         </div>
-        
+        <div class="form-group">
+            @Html.LabelFor(model => model.Espacio.Id, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Espacio.Id,
+                               new SelectList(ViewBag.Tarifas, "Id", "Id", "")
+                               , "---Select---", "")
+
+                @Html.ValidationMessageFor(model => model.Espacio.Id, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

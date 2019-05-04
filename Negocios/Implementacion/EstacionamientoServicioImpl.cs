@@ -10,33 +10,38 @@ namespace Negocios.Implementacion
 {
    public  class EstacionamientoServicioImpl : IEstacionamientoServicio
         
-    { private ILocalizacionRepository Localizacion = new LocalizacionRepositoryImpl();
-        private IEstacionamientoRepository estacionamiento = new EstacionamientoRepositoryImpl();
+    { private ILocalizacionRepository Localizacionrepository = new LocalizacionRepositoryImpl();
+        private IEstacionamientoRepository estacionamientorepository = new EstacionamientoRepositoryImpl();
         public bool Delete(int id)
         {
-            return estacionamiento.Delete(id);
+            return estacionamientorepository.Delete(id);
         }
 
         public List<Estacionamiento> FindAll()
         {
-            return estacionamiento.FindAll();
+            return estacionamientorepository.FindAll();
         }
 
         public Estacionamiento FindById(int? id)
         {
-            return estacionamiento.FindById(id);
+            return estacionamientorepository.FindById(id);
         }
 
         public bool Insert(Estacionamiento t)
         {
-            Localizacion local = Localizacion.FindById(t.localizacion.CodLocalizacion);
+            Localizacion local = Localizacionrepository.FindById(t.localizacion.CodLocalizacion);
             t.localizacion = local;
-            return estacionamiento.Insert(t);
+
+            var estacionamientos = Localizacionrepository.GetCantEstacionamientos(local);
+            if (estacionamientos > 4) return false;
+            
+      
+            return estacionamientorepository.Insert(t);
         }
 
         public bool Update(Estacionamiento t)
         {
-            return estacionamiento.Update(t);
+            return estacionamientorepository.Update(t);
         }
     }
 }
