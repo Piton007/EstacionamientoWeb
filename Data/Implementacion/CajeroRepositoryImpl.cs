@@ -42,11 +42,11 @@ namespace Data.Implementacion
 					var query = new SqlCommand("Select C.id_cajero, C.Nombre, C.Turno,C.id_pAtencion,PA.Ubicacion  from Cajero as C inner join PuntoAtencion as PA on C.id_pAtencion=PA.id_pAtencion ", conexion);
 					using (var dr = query.ExecuteReader())
 					{
-						var cajero = new Cajero();
-						var punto_atencion = new PuntoAtencion();
+						
 						while (dr.Read())
 						{
-
+							var cajero = new Cajero();
+							var punto_atencion = new PuntoAtencion();
 							cajero.Id = Convert.ToInt32(dr["id_cajero"]);
 							cajero.Nombre = dr["Nombre"].ToString();
 							cajero.Turno = dr["Turno"].ToString();

@@ -63,8 +63,7 @@ namespace Presentacion.Controllers
         public ActionResult Create(Ingreso ing)
         {
 
-            if (!ModelState.IsValid)
-                return RedirectToAction("Create");
+            
 
             ViewBag.tarifas = tarifaServicio.FindAll();
             ViewBag.cajeros = cajeroServicio.FindById(1);
@@ -75,7 +74,11 @@ namespace Presentacion.Controllers
             
 
             bool result = ingresoServicio.Insert(ing);
-            
+            if (result) return RedirectToAction("Index");
+           
+            if (!ModelState.IsValid)
+                return RedirectToAction("Create");
+
             return View();
         }
 

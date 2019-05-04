@@ -39,7 +39,7 @@ namespace Data.Implementacion
                 using (var connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
                 {
                     connection.Open();
-                    var query = new SqlCommand("Select E.id_Espacio, E.Disponibilidad, E.id_estacionamiento from Espacio as E inner join Estacionamiento as Et on Et.id_estacionamiento=E.id_estacionamiento where E.Disponibilidad=1", connection);
+                    var query = new SqlCommand("Select E.id_Espacio, E.Disponibilidad, E.id_estacionamiento from Espacio as E inner join Estacionamiento as Et on Et.id_estacionamiento=E.id_estacionamiento where E.Disponibilidad= 1", connection);
                     using (var dr = query.ExecuteReader())
                     {
                         
@@ -132,9 +132,9 @@ namespace Data.Implementacion
                 using (var connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
                 {
                     connection.Open();
-                    var query = new SqlCommand("Update Espacio Set id_estacionamiento ='" + t.estacionamiento.Id
-                                             + "'" + ", Disponibilidad='" + t.Disponible
-                                             + "'" + " Where id_Espacio='" + t.Id + "'", connection);
+                    var query = new SqlCommand("Update Espacio Set Disponibilidad=@enable where id_Espacio=@Id", connection);
+                    query.Parameters.AddWithValue("@Id", t.Id);
+                    query.Parameters.AddWithValue("@enable",Convert.ToInt32(t.Disponible));
                     query.ExecuteNonQuery();
                     rpta = true;
                 }

@@ -7,6 +7,15 @@
 
 <h2>Details</h2>
 
+<h3>
+	Espacios disponibles:
+	@if (ViewBag.Count != null)
+	{
+
+		@Html.Raw(ViewBag.Count)
+
+	}
+</h3>
 <div>
     <h4>Estacionamiento</h4>
     <hr />

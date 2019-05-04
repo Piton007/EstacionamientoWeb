@@ -38,7 +38,7 @@
             @Html.LabelFor(model => model.Espacio.Id, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownListFor(model => model.Espacio.Id,
-                               new SelectList(ViewBag.Tarifas, "Id", "Id", "")
+                               new SelectList(ViewBag.espacios, "Id", "Id", "")
                                , "---Select---", "")
 
                 @Html.ValidationMessageFor(model => model.Espacio.Id, "", new { @class = "text-danger" })
