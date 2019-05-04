@@ -39,14 +39,14 @@ namespace Data.Implementacion
                 using (var connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
                 {
                     connection.Open();
-                    var query = new SqlCommand("Select E.id_Espacio, E.Disponibilidad, E.id_estacionamiento from Espacio as E inner join Estacionamiento as Et on Et.id_estacionamiento=E.id_estacionamiento ", connection);
+                    var query = new SqlCommand("Select E.id_Espacio, E.Disponibilidad, E.id_estacionamiento from Espacio as E inner join Estacionamiento as Et on Et.id_estacionamiento=E.id_estacionamiento where E.Disponibilidad=1", connection);
                     using (var dr = query.ExecuteReader())
                     {
-                        var espacio = new Espacio();
-                        var Estacionamiento = new Estacionamiento();
+                        
                         while (dr.Read())
                         {
-
+                            var espacio = new Espacio();
+                            var Estacionamiento = new Estacionamiento();
                             espacio.Id = Convert.ToInt32(dr["id_Espacio"]);
                             espacio.Disponible = Convert.ToBoolean(dr["Disponibilidad"]);
                             Estacionamiento.Id = Convert.ToInt32(dr["id_estacionamiento"]);
@@ -76,7 +76,7 @@ namespace Data.Implementacion
                 {
                     con.Open();
 
-                    var query = new SqlCommand("SELECT E.id_Espacio, E.Disponibilidad, E.id_estacionamiento  from Espacio as E inner join Estacionamiento as ES on E.id_estacionamientos=ES.id_estacionamiento " +
+                    var query = new SqlCommand("SELECT E.id_Espacio, E.Disponibilidad, E.id_estacionamiento  from Espacio as E inner join Estacionamiento as ES on E.id_estacionamiento=ES.id_estacionamiento " +
                         "WHERE id_Espacio='" + id + "'", con);
                     using (var dr = query.ExecuteReader())
                     {

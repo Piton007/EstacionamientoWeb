@@ -12,7 +12,7 @@ namespace Entidades
         public string Nombre { get; set; }
         [Required(ErrorMessage = " Ingrese numero de espacios")]
         [DisplayName(" Nro Espacios")]
-        [Range(1, 50, ErrorMessage = "Solo puede alberga un maximo de 50 espacios")]
+        [Range(1, 20, ErrorMessage = "Solo puede alberga un maximo de 20 espacios")]
         public int espacios { get; set; }
         [DisplayName(" Direccion ")]
         [StringLength(50, MinimumLength = 2, ErrorMessage = "La direccion no se debe superar los 50 caracteres")]

@@ -25,11 +25,14 @@ namespace Presentacion.Controllers
         [HttpPost]
         public ActionResult Create(Localizacion local)
         {
+            if (!ModelState.IsValid)
+                return RedirectToAction("Create");
             bool rpta = localizacionService.Insert(local);
             if (rpta)
             {
                 return RedirectToAction("Index");
             }
+           
             return View();
         }
         //

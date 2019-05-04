@@ -11,6 +11,36 @@ namespace Data.Implementacion
 {
     public class LocalizacionRepositoryImpl : ILocalizacionRepository
     {
+        public int GetCantEstacionamientos(Localizacion local)
+        {
+            int Estacionamientos = 0;
+            try
+            {
+                using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
+                {
+                    connection.Open();
+                    var query = new SqlCommand("Select Count(*) as Cantidad FROM Estacionamiento as E  where E.cod_local=@id ", connection);
+                    query.Parameters.AddWithValue("@id", local.CodLocalizacion);
+                    using (var dr = query.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            Estacionamientos = Convert.ToInt32(dr["Cantidad"]);
+
+                        }
+
+
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return Estacionamientos;
+
+        }
         public bool Delete(int id)
         {
             bool rpta = false;

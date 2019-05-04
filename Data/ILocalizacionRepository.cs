@@ -8,6 +8,6 @@ namespace Data
 {
     public interface ILocalizacionRepository: ICRUDRepository<Localizacion>
     {
-
+        int GetCantEstacionamientos(Localizacion local);
     }
 }

@@ -27,12 +27,23 @@ namespace Presentacion.Controllers
         public ActionResult Create(Estacionamiento estacionamient)
         {
             ViewBag.localizaciones = localizacionServicio.FindAll();
-            bool rptaInsert = estacionamientoServicio.Insert(estacionamient);
-            if (rptaInsert)
+            if (!ModelState.IsValid)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
-            return View();
+            bool rptaInsert = estacionamientoServicio.Insert(estacionamient);
+            if (!rptaInsert )
+            {
+                ViewBag.Message = "Se ha excedido el numero de estacionamientos para el local" + estacionamient.localizacion.Nombre;
+                return View(new Estacionamiento());
+
+            }
+           
+                
+            
+
+            return RedirectToAction("Index");
+
 
         }
 

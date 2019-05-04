@@ -142,7 +142,7 @@ namespace Data.Implementacion
                 using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
                 {
                     conn.Open();
-                    var query = new SqlCommand("INSERT INTO Ingreso(id_Tarifa, id_Cajero, Placa, Fecha_reg, id_Espacio) VALUES(@idTarifa,@idCajero,@Placa,@fecha,@idEspacio)", conn);
+                    var query = new SqlCommand("INSERT INTO Ingreso VALUES(@idTarifa,@idCajero,@Placa,@fecha,@idEspacio)", conn);
 
                     query.Parameters.AddWithValue("@idTarifa",t.Tarifa.Id);
                     query.Parameters.AddWithValue("@idCajero",t.Cajero.Id);
