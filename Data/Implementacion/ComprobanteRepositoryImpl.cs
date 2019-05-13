@@ -37,7 +37,7 @@ namespace Data.Implementacion
             var comprobantes = new List<Comprobante>();
             try
             {
-                using (var connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["EstacionamientoDB"].ToString()))
+                using (var connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
                 {
                     connection.Open();
                     var query = new SqlCommand("Select C.id_boleta,C.Fecha_Inicio,C.Monto,C.cod_registro,I.Fecha_reg" +
@@ -117,7 +117,7 @@ namespace Data.Implementacion
                 using (var connection= new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
                 {
                     connection.Open();
-                    var query = new SqlCommand("Insert into Comprobante values(@cod_registro,@Monto,@Fecha_Final)", connection);
+                    var query = new SqlCommand("Insert into Comprobante values(@cod_registro,@Fecha_Final,@Monto)", connection);
                     query.Parameters.AddWithValue("@cod_registro", t.cod_ingreso.CodIngreso);
                     query.Parameters.AddWithValue("@Fecha_Final", t.FechaFinal);
                     query.Parameters.AddWithValue("@Monto", t.Monto);

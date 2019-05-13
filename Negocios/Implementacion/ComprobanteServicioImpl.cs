@@ -32,13 +32,25 @@ namespace Negocios.Implementacion
 
         public bool Insert(Comprobante t)
         {
-            t.cod_ingreso = ingreso.FindById(t.cod_ingreso.CodIngreso);
-            t.FechaFinal = DateTime.Today;
-            var horas = (t.FechaFinal - t.cod_ingreso.FechaIngreso).Hours;
-            double Tarifa = (tarifa.FindById(t.cod_ingreso.Tarifa.Id).MontoTarifa)*horas;
-            t.Monto = Tarifa;
-            return comprobante.Insert(t);
+            bool rpta = comprobante.Insert(t);
+           
+
+            return rpta;
             
+        }
+
+        public Comprobante Preview(int ?id)
+        {
+            var tmpcomprobante = new Comprobante();
+            var tmpingreso = ingreso.FindById(id);
+            tmpingreso.Tarifa = tarifa.FindById(tmpingreso.Tarifa.Id);
+            tmpcomprobante.cod_ingreso = tmpingreso;
+            tmpcomprobante.FechaFinal = DateTime.Today;
+            var horas = (tmpcomprobante.cod_ingreso.FechaIngreso -tmpcomprobante.FechaFinal).Hours;
+            double Tarifa =(tmpcomprobante.cod_ingreso.Tarifa.MontoTarifa)*horas;
+            tmpcomprobante.Monto = Tarifa;
+            return tmpcomprobante;
+
         }
 
         public bool Update(Comprobante t)

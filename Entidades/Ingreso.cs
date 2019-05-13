@@ -10,6 +10,7 @@ namespace Entidades
 {
     public class Ingreso
     {
+        [DisplayName("Codigo Ingreso: ")]
         public int CodIngreso { get; set; }
         [DisplayName("Tarifa: ")]
         [Required(ErrorMessage = "Ingrese Tarifa")]

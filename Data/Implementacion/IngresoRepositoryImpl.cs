@@ -19,7 +19,7 @@ namespace Data.Implementacion
                 using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Estacionamiento"].ToString()))
                 {
                     conn.Open();
-                    var query = new SqlCommand("DELETE FROM Ingreso WHERE cod_registro=@id");
+                    var query = new SqlCommand("DELETE FROM Ingreso WHERE cod_registro=@id",conn);
                     query.Parameters.AddWithValue("@id", id);
                     query.ExecuteNonQuery();
                     seElimino = true;
@@ -56,7 +56,7 @@ namespace Data.Implementacion
 
                             ing.CodIngreso = Convert.ToInt32(dr["cod_registro"]);
                             ing.Placa = dr["Placa"].ToString();
-                            ing.FechaIngreso = DateTime.Now;
+                            ing.FechaIngreso =Convert.ToDateTime(dr["Fecha_reg"]);
 
                             ta.Id = Convert.ToInt32(dr["id_Tarifa"]);
                             ta.MontoTarifa = Convert.ToDouble(dr["Tarifa"]);

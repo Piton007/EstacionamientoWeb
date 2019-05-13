@@ -84,4 +84,8 @@ grep -lr '<<<<<<<' . | xargs git checkout --theirs
 touch .gitignore
 */Clonar un branch especifico*/
 git clone --single-branch --branch <branchname> <url>
+*/Remover directorios untracked*/
+git clean -fd
+*/Remover files untracked*/
+git clean -fX
 

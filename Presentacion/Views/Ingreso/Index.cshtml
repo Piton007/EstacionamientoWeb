@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Entidades.Ingreso>
+﻿@*@model IEnumerable<Entidades.Ingreso>
 
 
 
@@ -91,12 +91,12 @@
 			});
 		});
 	});
-</script>
+</script>*@
 
 
 
 
-@*@model IEnumerable<Entidades.Ingreso>
+@model IEnumerable<Entidades.Ingreso>
 
 	@{
 		ViewBag.Title = "Index";
@@ -133,12 +133,13 @@
 			<td>
 				@Html.DisplayFor(modelItem => item.FechaIngreso)
 			</td>
-			<td>
-				@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-				@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-				@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-			</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })|
+                @Html.ActionLink("Ingreso", "Create", "Comprobante",new { id=item.CodIngreso},null)
+            </td>
 		</tr>
 	}
 
-	</table>*@
+	</table>

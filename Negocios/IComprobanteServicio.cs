@@ -10,5 +10,6 @@ namespace Negocios
 {
     public interface IComprobanteServicio:ICRUDServicio<Comprobante>
     {
+         Comprobante Preview(int ?id);
     }
 }

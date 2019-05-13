@@ -13,30 +13,47 @@ namespace Presentacion.Controllers
     {
         private IComprobanteServicio comprobante = new ComprobanteServicioImpl();
 
-        private IIngresoServicio ingreso = new IngresoServicioImpl(); 
+        private IIngresoServicio ingreso = new IngresoServicioImpl();
+        private ITarifaServicio tarifa = new TarifaServicioImpl();
         // GET: Comprobante
         public ActionResult Index()
         {
             ViewBag.Tarifas = ingreso.FindAll();
             return View(comprobante.FindAll());
         }
-        public ActionResult Create()
+        public ActionResult Create(int? id)
         {
-            ViewBag.Ingreso = ingreso.FindAll();
+            var tmpcomprobante = comprobante.Preview(id);
+            var diff = (tmpcomprobante.cod_ingreso.FechaIngreso -tmpcomprobante.FechaFinal );
 
-            return View();
+            ViewBag.Time =  diff.Hours.ToString("00") + ":" + diff.Minutes.ToString("00");
+
+
+            return View(tmpcomprobante);
         }
         [HttpPost]
         public ActionResult Create(Comprobante nuevo_comprobante)
         {
-            ViewBag.Ingreso = ingreso.FindAll();
-            bool rpta = comprobante.Insert(nuevo_comprobante);
+        
+                bool rpta = comprobante.Insert(nuevo_comprobante);
+
+            //if (rpta)
+            //{
+            //    return RedirectToAction("Index");
+            //}
+
+            string Mensaje = "";
             if (rpta)
             {
-                return RedirectToAction("Index");
+                 Mensaje = "Se ha insertado un comprobante";
             }
-            
-            return View();
+            else
+            {
+                Mensaje = "Hubo un error al generar un comprobante";
+            }
+
+            return Json(Mensaje, JsonRequestBehavior.AllowGet);
+
         }
         public ActionResult Delete(int ?id)
         {
