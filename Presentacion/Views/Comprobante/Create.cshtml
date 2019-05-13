@@ -52,6 +52,11 @@
 
 
                     </div>
+                    <div class="col-lg-4 ">
+                        <span id="Msg" class=" label label-success" style="display:none">  </span>
+
+
+                    </div>
 
 
 
@@ -107,8 +112,9 @@
                 dataType: 'json',
                 contentType: dataType,
                 success: function (result) {
+                    $("#Msg").text("*Se genero correctamente");
+                    $("#Msg").toggle();
                     
-                    alert(result);
 
 
                 },
