@@ -109,7 +109,7 @@ namespace Data.Implementacion
 
                             ingreso.CodIngreso = Convert.ToInt32(dr["cod_registro"]);
                             ingreso.Placa = dr["Placa"].ToString();
-                            ingreso.FechaIngreso = DateTime.Now;
+                            ingreso.FechaIngreso = Convert.ToDateTime(dr["Fecha_reg"]); 
 
                             ingreso.Tarifa.Id = Convert.ToInt32(dr["id_Tarifa"]);
                             ingreso.Tarifa.MontoTarifa = Convert.ToDouble(dr["Tarifa"]);

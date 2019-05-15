@@ -46,8 +46,8 @@ namespace Negocios.Implementacion
             tmpingreso.Tarifa = tarifa.FindById(tmpingreso.Tarifa.Id);
             tmpcomprobante.cod_ingreso = tmpingreso;
             tmpcomprobante.FechaFinal = DateTime.Today;
-            var horas = (tmpcomprobante.cod_ingreso.FechaIngreso -tmpcomprobante.FechaFinal).Hours;
-            double Tarifa =(tmpcomprobante.cod_ingreso.Tarifa.MontoTarifa)*horas;
+            var horas = tmpcomprobante.FechaFinal.Subtract(tmpcomprobante.cod_ingreso.FechaIngreso);
+            double Tarifa =(tmpcomprobante.cod_ingreso.Tarifa.MontoTarifa)*(horas.Hours+(horas.Days*24));
             tmpcomprobante.Monto = Tarifa;
             return tmpcomprobante;
 

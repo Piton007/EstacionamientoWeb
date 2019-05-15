@@ -24,9 +24,10 @@ namespace Presentacion.Controllers
         public ActionResult Create(int? id)
         {
             var tmpcomprobante = comprobante.Preview(id);
-            var diff = (tmpcomprobante.cod_ingreso.FechaIngreso -tmpcomprobante.FechaFinal );
+            var diff = tmpcomprobante.FechaFinal.Subtract(tmpcomprobante.cod_ingreso.FechaIngreso);
 
-            ViewBag.Time =  diff.Hours.ToString("00") + ":" + diff.Minutes.ToString("00");
+
+            ViewBag.Time = (diff.Hours+diff.Days*24).ToString("0") + ":" + diff.Minutes.ToString("0");
 
 
             return View(tmpcomprobante);
